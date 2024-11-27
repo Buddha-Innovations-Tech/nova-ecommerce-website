@@ -61,6 +61,7 @@ const Navbar = () => {
               </Link>
             </figure>
             <CategoryDropdown categories={categories} />
+            <section><span className='categoryToggle-text'>About Us</span></section>
             <section className='navWrapper-search'>
               <input
                 type='search'
