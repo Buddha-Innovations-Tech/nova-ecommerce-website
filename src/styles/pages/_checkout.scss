@@ -1,0 +1,76 @@
+.shippingWrapper {
+  margin-top: 2rem;
+  .shippingForm {
+    box-shadow: $shadow;
+    border-radius: $radius;
+    padding: 1rem;
+  }
+
+  .paymentMethod {
+    // margin-top: 1rem;
+
+    .paymentList {
+      display: flex;
+
+      &-item {
+        border: $border;
+        padding: 2rem;
+        margin: 0.5rem;
+        border-radius: $radius;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+.choosePaymentWrapper {
+  margin: 1rem 0;
+
+  &-title {
+    font-weight: 500;
+    font-size: 1.7rem;
+  }
+
+  &-list {
+    margin-top: 1rem;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    .activeMethod {
+      border-color: color(primary, base);
+      border-width: 2px;
+    }
+    &-items {
+      padding: 0.5rem;
+      border: $border;
+      margin-right: 0.5rem;
+      border-radius: $radius;
+      cursor: pointer;
+      img {
+        height: 4rem;
+        width: 8rem;
+        object-fit: contain;
+        @include responsive-for(sm) {
+          width: 6.5rem;
+        }
+      }
+    }
+  }
+}
+
+.checkoutFinal {
+  &-method {
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background: color(text-extra-light);
+    span {
+      color: color(primary, base);
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,414 @@
+.topnavInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  @include responsive-for(md) {
+    justify-content: flex-end;
+  }
+
+  &-left {
+    font-size: 13px;
+    color: color(text-light);
+    i {
+      margin-right: 0.5rem;
+    }
+    @include responsive-for(md) {
+      display: none;
+    }
+  }
+  &-right {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+
+    &_country {
+      width: 8rem;
+
+      &-select {
+        font-size: 13px !important;
+        padding: 0.2rem 0.5rem !important;
+      }
+    }
+
+    &_user {
+      font-size: 13px;
+      color: color(text-light);
+      @include responsive-for(md) {
+        display: none;
+      }
+    }
+  }
+}
+.navMainWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background: white;
+  @include responsive-for(md) {
+    margin-bottom: 2rem;
+  }
+}
+
+.navWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+
+  @include responsive-for(md) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &-brand {
+    margin: 0;
+    img {
+      width: 10rem;
+      margin-top: 1rem;
+
+      @include responsive-for(xlg) {
+        margin-right: 0rem;
+      }
+
+      @include responsive-for(lg) {
+        width: 7rem;
+      }
+    }
+  }
+
+  &-search {
+    input {
+      width: 30rem;
+      height: 42px;
+      padding: 1.3rem;
+      color: color(text-light);
+      border: 1px solid #ededed;
+      border-radius: $radius 0 0 $radius;
+      background-color: #f5f5f5;
+      font-size: 16px;
+
+      @include responsive-for(xlg) {
+        width: 20rem;
+      }
+      @include responsive-for(lg) {
+        width: 14rem;
+      }
+      @include responsive-for(sm) {
+        width: 19rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .mobSearchBton {
+      height: 42px;
+      border-radius: 0 $radius $radius 0;
+      @include responsive-for(sm) {
+        display: none;
+      }
+    }
+  }
+  &-carts {
+    @include responsive-for(md) {
+      display: none;
+    }
+    &-login {
+      a {
+        padding: 1rem 0.5rem;
+        margin-right: 1rem;
+        cursor: pointer;
+        color: color(text-light);
+        font-weight: 500;
+        line-height: 1px;
+        svg {
+          stroke-width: 1px !important;
+        }
+
+        &:hover {
+          color: color(primary, base);
+        }
+      }
+    }
+    .myCart {
+      position: relative;
+      font-weight: 500;
+      font-size: 1.1rem;
+      a {
+        color: color(text-light) !important;
+        img,
+        span {
+          margin-right: 0.2rem;
+          width: 20px;
+          margin-bottom: 6px;
+          font-size: 1rem;
+        }
+      }
+      .cartCount {
+        color: white;
+        min-height: 1.2rem;
+        min-width: 1.2rem;
+        border-radius: calc(1.3rem);
+        font-size: 13px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: color(primary, base);
+        position: absolute;
+        top: -0.5rem;
+        right: -5px;
+      }
+    }
+  }
+}
+
+.navCategories {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  &-items {
+    padding: 1rem;
+    color: white;
+  }
+}
+
+.navbarBox {
+  background: color(primary, base);
+  @include responsive-for(md) {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    align-items: center;
+    justify-content: flex-start;
+    &--items {
+      position: relative;
+      color: rgb(255, 255, 255);
+      padding: 0.7rem 1rem;
+      font-weight: 300;
+      a {
+        color: color(text-dark);
+      }
+
+      .navitems {
+        color: white;
+      }
+      img {
+        width: 16px;
+      }
+
+      .testm {
+        background: green;
+        height: 5rem;
+      }
+      .sub--menu {
+        position: absolute;
+        z-index: 100;
+        background: rgb(255, 255, 255);
+        border: $border;
+        box-shadow: 1px 2px 4px #c4c4c4;
+        left: 0;
+        display: none;
+        flex-wrap: wrap;
+        top: 2.9rem;
+        border-radius: 4px;
+        transition: all 0.5s ease;
+        width: 35rem;
+
+        //
+
+        .subcatWrapper {
+          padding: 1rem;
+          &--title {
+            font-weight: 600;
+            font-size: 16px;
+          }
+          &--itemholder {
+            padding: 0;
+            &__items {
+              font-size: 14px;
+              font-weight: 400;
+              padding-top: 0.7rem;
+              color: red;
+              &:hover {
+                color: color(primary, base);
+              }
+            }
+          }
+        }
+      }
+      &:hover {
+        background: color(primary, hover);
+        cursor: pointer;
+        .sub--menu {
+          display: flex;
+          transition: all 0.5s linear;
+        }
+      }
+    }
+  }
+}
+
+.login-modal {
+  .close {
+    > span {
+      color: color(danger, base);
+    }
+  }
+  .modal {
+    &-header {
+      border: none;
+      color: color(text-light);
+    }
+    &-footer {
+      border: none;
+    }
+  }
+}
+
+//carousel image
+.carImage {
+  height: 32rem;
+  object-fit: cover;
+  @include responsive-for(md) {
+    height: 25rem;
+  }
+  @include responsive-for(sm) {
+    height: 15rem;
+  }
+}
+
+.mobileWrapper {
+  display: none;
+
+  @include responsive-for(md) {
+    display: block;
+  }
+  .mobileNavbar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 11;
+    box-shadow: 1px 1px 12px #24a5dc56;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: $border;
+    background: white;
+    &-items {
+      text-align: center;
+
+      i {
+        font-size: 1.4rem;
+      }
+      &-name {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+      }
+
+      .cartMobCount {
+        position: absolute;
+        top: 0;
+        background: red;
+        height: 1rem;
+
+        font-size: 0.7rem;
+        width: 1rem;
+        border-radius: calc(1rem);
+        color: white;
+      }
+
+      &:hover {
+        background: #ffffff;
+        color: color(primary, base);
+      }
+    }
+  }
+}
+
+.mobActiveTab {
+  color: color(primary, base) !important;
+  display: block;
+}
+
+.notActive {
+  color: rgb(95, 95, 95);
+  display: block;
+}
+
+//more page
+
+.moreContainer {
+  background: white;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  overflow-y: auto;
+  z-index: 10;
+  animation: example 0.3s ease-in-out;
+
+  ul {
+    padding: 0;
+    li {
+      padding: 1rem;
+    }
+
+    h6 {
+      color: color(primary, base);
+      font-weight: 600 !important;
+    }
+  }
+
+  a {
+    color: color(text-dark);
+    &:visited {
+      color: color(text-dark);
+    }
+  }
+
+  .accordion-item {
+    background-color: #fff;
+    border: none !important;
+  }
+
+  .subcatTitle {
+    font-weight: 600 !important;
+    font-size: 15px !important;
+  }
+
+  &-items {
+    background: #f2f2f2;
+    border-radius: $radius;
+    margin-bottom: 5px;
+    color: color(text-dark);
+  }
+}
+
+@keyframes example {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+.mobSearchBton {
+  @include responsive-for(sm) {
+    display: none;
+  }
+}
+
+.active {
+  background-color: color(primary, base);
+  color: white !important;
+  pointer-events: none;
+}

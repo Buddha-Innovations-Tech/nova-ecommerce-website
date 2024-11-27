@@ -1,0 +1,80 @@
+//custom desing system colors
+
+.strongUp {
+  text-transform: uppercase;
+  color: color(secondary, base);
+}
+
+//color primary
+
+.cpr {
+  color: color(primary, base);
+}
+.cprt {
+  color: color(primary, tint);
+}
+.bpr {
+  background: color(primary, base);
+}
+.bprt {
+  background: color(primary, tint);
+}
+
+//color secondary
+
+.cse {
+  color: color(secondary, base);
+}
+.cset {
+  color: color(secondary, tint);
+}
+.bse {
+  background: color(secondary, base);
+}
+.bset {
+  background: color(secondary, tint);
+}
+
+//success
+
+.csu {
+  color: color(success, base);
+}
+.bsu {
+  background: color(success, base);
+}
+.csut {
+  color: color(success, tint);
+}
+.bsut {
+  background-color: color(success, tint);
+}
+
+// warning color
+
+.cwa {
+  color: color(warning, base);
+}
+.bwa {
+  background: color(warning, base);
+}
+.cwat {
+  color: color(warning, tint);
+}
+.bwat {
+  background: color(warning, tint);
+}
+
+//danger
+.cda {
+  color: color(danger, base);
+}
+.bda {
+  background: color(danger, base);
+}
+.bdat {
+  background: color(danger, tint);
+}
+.bcdat {
+  background: color(danger, tint);
+}

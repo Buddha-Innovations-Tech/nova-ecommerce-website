@@ -1,0 +1,165 @@
+.movfooter {
+  height: 5rem;
+  background: rgb(255, 255, 255);
+  display: none;
+  @include responsive-for(md) {
+    display: block;
+  }
+}
+section[role='Footer'] {
+  margin-top: 8rem;
+  background: color(primary, base);
+  @include responsive-for(md) {
+    display: none;
+  }
+
+  .foooterInfo {
+    margin-top: 3rem;
+    img {
+      width: 12rem;
+    }
+    p {
+      color: white;
+      line-height: 180%;
+      text-align: justify;
+      width: 100%;
+      margin-top: 2rem;
+      font-size: 14px;
+    }
+  }
+
+  //links
+
+  .Links {
+    color: white;
+    &-title {
+      color: white;
+      margin-top: 3rem;
+      @include responsive-for(sm) {
+        margin-top: 2rem;
+      }
+    }
+
+    &-box {
+      margin-top: 2rem;
+      padding: 0;
+      &-item {
+        margin-top: 1rem;
+        text-decoration: underline;
+        cursor: pointer;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+
+  //contact info
+
+  .contact {
+    color: white;
+    &-title {
+      margin-top: 3rem;
+      @include responsive-for(sm) {
+        margin-top: 2rem;
+      }
+    }
+
+    &-box {
+      padding: 0;
+      &-item {
+        margin-top: 2rem;
+        display: flex;
+
+        .iconHolder {
+          margin-right: 1rem;
+        }
+        .addHolder {
+          &-key {
+          }
+
+          &-value {
+            font-size: 14px;
+            font-weight: 300;
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+
+  .socialMedia {
+    color: white;
+    &-title {
+      margin-top: 3rem;
+      @include responsive-for(sm) {
+        margin-top: 2rem;
+      }
+    }
+
+    .footerImage {
+      background: white;
+      padding: 4px 8px;
+      border-radius: $radius;
+    }
+
+    .socialWrapper {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      margin-top: 2rem;
+
+      &-icons {
+        cursor: pointer;
+        margin-right: 1rem;
+        border: 1px solid white;
+        background: white;
+        height: 2.5rem;
+        width: 2.5rem;
+        padding: 0.5rem;
+        border-radius: calc(2.5rem);
+        color: color(primary, base);
+        &:hover {
+        }
+
+        @include flex-center();
+        transition: all ease-in 0.2s;
+
+        i {
+          // color: color(gray, four);
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+        .facebook {
+          color: rgb(17, 17, 167);
+          font-size: 1.5rem;
+        }
+        .instagram {
+          color: rgb(235, 80, 8);
+          font-size: 1.5rem;
+        }
+        .twitter {
+          color: rgb(19, 188, 255);
+          font-size: 1.5rem;
+        }
+        .youtube {
+          color: red;
+          font-size: 1.4rem;
+        }
+        img {
+          width: 1.7rem;
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  padding-bottom: 3rem;
+  color: white;
+  text-align: center;
+}

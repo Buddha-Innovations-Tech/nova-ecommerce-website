@@ -1,0 +1,378 @@
+.productWrapper {
+  background: color(white);
+
+  border-radius: $radius;
+  padding: 1rem;
+
+  .imageHolder {
+    background: color(bg);
+
+    .image-gallery-slides {
+      height: 35rem;
+    }
+
+    .image-gallery-image {
+      border: $border;
+      width: 100%;
+      border-radius: $radius;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      height: 35rem;
+      padding: 1rem;
+      object-fit: contain;
+      background: white;
+    }
+
+    .image-gallery-thumbnail {
+      border: 2px solid rgb(216, 216, 216);
+
+      &:hover {
+        border: 2px solid color(primary, base);
+      }
+    }
+    .active {
+      border: 2px solid color(primary, base);
+    }
+    .image-gallery-thumbnail-image {
+      height: 5rem;
+      width: 5rem;
+      object-fit: contain;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+
+      @include responsive-for(md) {
+        width: 4rem;
+      }
+    }
+  }
+  .DetailsHolder {
+    &-header {
+      border-bottom: 1px solid rgb(230, 230, 230);
+
+      &-title {
+        color: color(text-dark);
+        margin-top: 1rem;
+        font-weight: 600 !important;
+      }
+      &-brand {
+        font-size: 1rem;
+        .brandKey {
+          color: color(text-light);
+        }
+        .brandValue {
+          color: color(text-dark);
+        }
+      }
+    }
+
+    &-stock {
+      &-price {
+        color: color(primary, base);
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-right: 0.5rem;
+      }
+      &-cutprice {
+        color: #848484;
+        font-size: $text-lg;
+        font-weight: $font-regular;
+        text-decoration: line-through;
+        margin-right: 0.5rem;
+      }
+      &-discount {
+        background: color(accent);
+        color: white;
+        font-size: 12px;
+        font-weight: $font-bold;
+        padding: 0.3rem 0.7rem;
+        margin-bottom: 1rem;
+        border-radius: $radius-buttons;
+      }
+
+      &-vatInfo {
+        font-size: $text-xs;
+        color: color(gray, one);
+        font-weight: $font-medium;
+        font-weight: 300;
+      }
+      &-stockInfo {
+        text-transform: uppercase;
+        font-size: 14px;
+        color: color(success, base);
+        font-weight: 400;
+        background-color: color(text-extra-light);
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 5rem;
+        margin-top: 1rem;
+      }
+      &-stockInfoDanger {
+        text-transform: uppercase;
+        font-size: 14px;
+        color: color(danger, base);
+        font-weight: 400;
+        background-color: color(text-extra-light);
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 5rem;
+        margin-top: 1rem;
+      }
+    }
+
+    &-highlights {
+      margin-top: 1rem;
+      ul {
+        text-decoration: none;
+        list-style-type: circle;
+        padding-left: 0;
+
+        li {
+          color: color(text-dark);
+          font-weight: $font-medium;
+          font-size: $text-md;
+        }
+      }
+    }
+    &-qty {
+      &-name {
+        font-weight: 500 !important;
+        color: color(text-dark);
+      }
+      &-select {
+        margin-top: 1rem;
+        width: 5rem;
+      }
+
+      .webQuantity {
+        @include responsive-for(md) {
+          display: none;
+        }
+      }
+      .mobQuantity {
+        display: none;
+        @include responsive-for(md) {
+          display: block;
+        }
+      }
+    }
+
+    &-variants {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      &_item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        &-name {
+          font-size: 1rem;
+        }
+
+        .btons-list {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 1rem;
+          &_item {
+            background-color: transparent;
+            border: 1px solid color(primary, base);
+            color: color(primary, base);
+            outline: none;
+            font-size: 14px;
+            border-radius: 2rem;
+            padding: 0.5rem 1rem;
+            min-width: 60px;
+          }
+
+          .active {
+            background-color: color(primary, base);
+            color: color(white);
+          }
+        }
+      }
+    }
+  }
+}
+
+.productInfoWrapper {
+  background: color(white);
+  // box-shadow: $shadow;
+  border-radius: $radius;
+  padding: 1rem;
+  .productDesc {
+    h2 {
+    }
+    p {
+      color: color(light);
+      line-height: 170%;
+    }
+  }
+}
+
+.productTechInfo {
+  background: color(white);
+  // box-shadow: $shadow;
+  border-radius: $radius;
+  padding: 1rem;
+  height: 100%;
+  .productTechDesc {
+    max-height: 60vh;
+    overflow-y: auto;
+    h2 {
+    }
+    ul {
+      padding: 0;
+      .productTechDesc-box {
+        display: flex;
+        font-size: $text-md;
+        color: color(text-dark);
+        @include responsive-for(sm) {
+          font-size: 12px;
+        }
+        &-key {
+          width: 30%;
+          font-weight: $font-bold;
+          @include responsive-for(sm) {
+            width: 45%;
+          }
+        }
+        &-value {
+        }
+      }
+    }
+  }
+}
+
+.relatedHolder {
+  background: color(white);
+  box-shadow: $shadow;
+  border-radius: $radius;
+}
+
+.singleImageProduct {
+  width: 100%;
+  height: 33rem;
+  object-fit: contain;
+  margin-top: 3rem;
+}
+
+//image gallery section
+.image-gallery-icon {
+  display: none;
+}
+
+.image-gallery-slides {
+  height: 30rem;
+  background: rgb(238, 238, 238);
+  border-radius: $radius;
+  overflow: hidden;
+}
+
+.image-gallery-thumbnail {
+  background: #f8f8f8;
+}
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail:hover,
+.image-gallery-thumbnail:focus {
+  outline: none;
+  border: 4px solid color(secondary, base);
+}
+
+.addedFail {
+  animation: example2 0.3s ease-in-out;
+  width: 20rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: $radius;
+  color: color(danger, base);
+}
+.addedSuccess {
+  animation: example2 0.3s ease-in-out;
+  font-size: 15px;
+  background: color(success, tint);
+  width: 0100%;
+  padding: 0.3rem 0.7rem;
+  border-radius: $radius;
+}
+
+@keyframes example2 {
+  from {
+    transform: translatey(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translatey(0);
+    opacity: 1;
+  }
+}
+
+.prodbuttons {
+  width: 40%;
+  @include responsive-for(sm) {
+    width: 100%;
+  }
+}
+
+.counterHolder {
+  display: flex;
+  margin-top: 1rem;
+  &-item {
+    user-select: none;
+    // border: $border;
+    background: color(text-extra-light);
+    height: 3rem;
+    width: 3rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 4px;
+    color: #333333;
+    &:hover {
+      background: color(primary, tint);
+    }
+
+    @include responsive-for(sm) {
+      width: auto;
+      height: auto;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .Qtynumber {
+    background: #ffffff;
+    border-radius: 0;
+    // margin: 0 3px;
+  }
+}
+
+.whattsappButton {
+  background-color: color(success, base);
+  margin-top: 0.5rem;
+  border: none !important;
+  color: white;
+  // padding: 0.3rem 3rem;
+}
+
+//product description tab
+
+.descriptionTab {
+  text-align: center;
+  margin-bottom: 2rem;
+  button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-bottom: 4px solid color(primary, tint);
+    background-color: white;
+    color: color(text-light);
+    font-size: 20px;
+  }
+  .activeDescTab {
+    border-bottom: 4px solid color(primary, base);
+    font-weight: 600;
+    color: color(text-dark);
+  }
+}

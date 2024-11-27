@@ -1,0 +1,30 @@
+.aboutInfo {
+  &-title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &-desc {
+    line-height: 192%;
+    color: color(text-light);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    @include responsive-for(lg) {
+      line-height: 172%;
+    }
+  }
+}
+.aboutImage {
+  img {
+    width: 80%;
+  }
+  @include responsive-for(xlg) {
+    margin-top: 5rem;
+  }
+  @include responsive-for(lg) {
+    margin-top: 10rem;
+  }
+  @include responsive-for(md) {
+    margin-top: 2rem;
+  }
+}

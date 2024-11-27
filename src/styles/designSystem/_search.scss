@@ -1,0 +1,33 @@
+.searchComp {
+  &-input {
+    height: 42px;
+    margin-right: 5px;
+    width: 25rem;
+    border-radius: 4px;
+    border: 1px solid color(gray, two);
+    padding: 1rem;
+  }
+}
+
+//date picker
+
+.dateComp {
+  .dateInput {
+    height: 42px;
+    margin-right: 5px;
+    border-radius: 4px;
+    border: 1px solid color(gray, two);
+    padding: 1rem;
+    color: color(text-light);
+  }
+}
+
+//checkbox
+
+.checkBox {
+  border-radius: 4px;
+  border: 1px solid color(gray, two);
+  padding: 0.3rem 1rem;
+  color: color(text-light);
+  display: inline-block;
+}
