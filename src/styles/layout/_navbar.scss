@@ -77,16 +77,37 @@
       }
     }
   }
+  &-about{
+    padding: 1rem 0.5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    color: color(text-light) !important;
+    font-weight: 500;
+    line-height: 1px;
+    svg {
+      stroke-width: 1px !important;
+    }
+
+    &:hover {
+      color: color(primary, base) !important;
+    }
+  }
 
   &-search {
+    border: 0.6px solid #00000073;
+    border-radius: 6.35rem;
+    overflow: hidden;
+    padding: 0.15rem 0.25rem;
     input {
       width: 30rem;
       height: 42px;
-      padding: 1.3rem;
+      padding: 1rem;
       color: color(text-light);
-      border: 1px solid #ededed;
+      // border: 1px solid #ededed;
+      border: none;
+      outline: none;
       border-radius: $radius 0 0 $radius;
-      background-color: #f5f5f5;
+      // background-color: #f5f5f5;
       font-size: 16px;
 
       @include responsive-for(xlg) {
@@ -103,7 +124,8 @@
 
     .mobSearchBton {
       height: 42px;
-      border-radius: 0 $radius $radius 0;
+      border-radius: 6.25rem;
+      // border-radius: 0 $radius $radius 0;
       @include responsive-for(sm) {
         display: none;
       }
@@ -123,6 +145,7 @@
         line-height: 1px;
         svg {
           stroke-width: 1px !important;
+          // height: auto;
         }
 
         &:hover {

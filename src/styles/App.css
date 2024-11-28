@@ -955,14 +955,34 @@ thead {
     width: 7rem;
   }
 }
+.navWrapper-about {
+  padding: 1rem 0.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  color: #383838 !important;
+  font-weight: 500;
+  line-height: 1px;
+}
+.navWrapper-about svg {
+  stroke-width: 1px !important;
+}
+.navWrapper-about:hover {
+  color: #276EB6 !important;
+}
+.navWrapper-search {
+  border: 0.6px solid rgba(0, 0, 0, 0.4509803922);
+  border-radius: 6.35rem;
+  overflow: hidden;
+  padding: 0.15rem 0.25rem;
+}
 .navWrapper-search input {
   width: 30rem;
   height: 42px;
-  padding: 1.3rem;
+  padding: 1rem;
   color: #383838;
-  border: 1px solid #ededed;
+  border: none;
+  outline: none;
   border-radius: 6px 0 0 6px;
-  background-color: #f5f5f5;
   font-size: 16px;
 }
 @media all and (max-width: 1200px) {
@@ -983,7 +1003,7 @@ thead {
 }
 .navWrapper-search .mobSearchBton {
   height: 42px;
-  border-radius: 0 6px 6px 0;
+  border-radius: 6.25rem;
 }
 @media all and (max-width: 576px) {
   .navWrapper-search .mobSearchBton {

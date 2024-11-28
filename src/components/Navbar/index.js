@@ -18,6 +18,8 @@ import CategoryDropdown from '../UiElements/CategoryDropdown';
 import { CiLogin } from 'react-icons/ci';
 import { FaRegUser } from 'react-icons/fa6';
 import { BsCart2 } from 'react-icons/bs';
+import { BiUserCircle } from "react-icons/bi";
+
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -61,7 +63,7 @@ const Navbar = () => {
               </Link>
             </figure>
             <CategoryDropdown categories={categories} />
-            <section><span className='categoryToggle-text'>About Us</span></section>
+            <section > <Link to='/about'> <span className='navWrapper-about'>  About Us </span></Link></section>
             <section className='navWrapper-search'>
               <input
                 type='search'
@@ -85,6 +87,13 @@ const Navbar = () => {
               </button>
             </section>
             <section className='navWrapper-carts'>
+            <span className='myCart'>
+                <Link to='/cart'>
+                  <BsCart2 />
+                  &nbsp;
+                  <div className='cartCount'>{cartItems?.length}</div>
+                </Link>
+              </span>
               {user ? (
                 <span className='navWrapper-carts-login'>
                   <Link to='/account'>
@@ -99,19 +108,13 @@ const Navbar = () => {
                   <Link to='/login'>
                     <span className=' me-1'>
                       <CiLogin />
+                      {/* <FaRegUser /> */}
+                      {/* <BiUserCircle /> */}
                     </span>
                     <span>LOGIN</span>
                   </Link>
                 </span>
               )}
-
-              <span className='myCart'>
-                <Link to='/cart'>
-                  <BsCart2 />
-                  &nbsp;
-                  <div className='cartCount'>{cartItems?.length}</div>
-                </Link>
-              </span>
             </section>
           </nav>
         </Container>
