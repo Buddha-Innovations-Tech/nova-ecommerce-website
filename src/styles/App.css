@@ -919,6 +919,7 @@ thead {
   top: 0;
   z-index: 9;
   background: white;
+  box-shadow: 3px 3px 47px 0px rgba(39, 110, 182, 0.2);
 }
 @media all and (max-width: 768px) {
   .navMainWrapper {
@@ -2368,7 +2369,7 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   margin-bottom: 1rem;
   border-radius: 6px;
   padding: 1rem;
-  background: #f4f4f4;
+  box-shadow: 3px 3px 47px 0px rgba(39, 110, 182, 0.2);
 }
 .productCard-image {
   height: 18rem;
@@ -2436,6 +2437,9 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   padding: 0.1rem;
   font-size: 12px;
   color: white;
+}
+.productCard-Footer {
+  display: flex;
 }
 
 .adsWrapper {

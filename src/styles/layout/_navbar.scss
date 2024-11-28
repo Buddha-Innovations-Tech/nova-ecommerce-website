@@ -46,6 +46,8 @@
   top: 0;
   z-index: 9;
   background: white;
+  box-shadow: 3px 3px 47px 0px rgba(39, 110, 182, 0.20);
+
   @include responsive-for(md) {
     margin-bottom: 2rem;
   }

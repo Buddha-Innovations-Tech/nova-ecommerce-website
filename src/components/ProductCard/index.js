@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Col, Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { BsCart2 } from 'react-icons/bs';
 
 import { addToCart, resetCart } from '../../redux/cartSlice';
 
@@ -48,6 +49,10 @@ function ProductCard({ column, fProduct }) {
               {fProduct.discount > 0 && (
                 <span className='cardOff'>{fProduct.discount}%off</span>
               )}
+              {/* <div className='productCard-Footer'>
+<RatingProduct Rate={3}/> <small>(Total Rating )</small>
+              </div> */}
+              {/* <div className='productCard-Button'><button className='productCard-Button__cart'> <BsCart2/></button>  <botton bton--sm bton--primary >Learn More  </botton> </div> */}
             </section>
           </Link>
         </Col>
