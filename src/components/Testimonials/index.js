@@ -1,5 +1,8 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import Avatar from '../../assets/images/cleaning/cheanHero.png';
+import {  BsStarFill} from "react-icons/bs";
+import TestimonialsRating from './rating';
+
 function Index() {
   return (
     <section className='testimonialWrapper'>
@@ -9,22 +12,23 @@ function Index() {
           <p>Our clients love our work </p>
         </section>
         <Row>
-          <Col md={6}>
+          <Col md={4}>
             <div className='testimonialBox'>
               <div className='testiDesc'>
                 <div className='testiDesc-quote'>
-                  <div className='testiDesc-quote-stars'>⭐⭐⭐⭐</div>
+                  <TestimonialsRating Rate={4}/>
+                  {/* <div className='testiDesc-quote-stars'>⭐⭐⭐⭐</div> */}
 
                   <p className='testiDesc-quote-text'>
-                    I love anything that I purchase from loraaj!
+                  "This product made my dog's coat shinier and boosted his energy like never before"
                   </p>
                 </div>
+                <div className='testiImage'>
+                <img className='rectangle' alt='Rectangle' src={Avatar} />
+              </div>
                 <div className='testiDesc-person'>Cameron Williamson</div>
                 <div className='testiDesc-designation'>President of Sales</div>
               </div>
-              <figure className='testiImage'>
-                <img className='rectangle' alt='Rectangle' src={Avatar} />
-              </figure>
             </div>
           </Col>
         </Row>

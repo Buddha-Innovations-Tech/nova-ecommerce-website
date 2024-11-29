@@ -547,14 +547,14 @@ html {
 }
 
 div {
-  font-family: "Poppins", sans-serif;
+  font-family: "Albert Sans", sans-serif;
 }
 
 body {
   margin: 0;
   font-weight: 400;
   background: #f8f8f8;
-  font-family: "Poppins", sans-serif;
+  font-family: "Albert Sans", sans-serif;
 }
 
 h1,
@@ -565,7 +565,7 @@ h2,
   margin-bottom: 0.1rem;
   color: #1d2a35;
   line-height: 150%;
-  font-family: "Poppins", sans-serif;
+  font-family: "Albert Sans", sans-serif;
 }
 
 h1 {
@@ -2369,7 +2369,7 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   margin-bottom: 1rem;
   border-radius: 6px;
   padding: 1rem;
-  box-shadow: 3px 3px 47px 0px rgba(39, 110, 182, 0.2);
+  background: #f4f4f4;
 }
 .productCard-image {
   height: 18rem;
@@ -2582,17 +2582,18 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
 .testimonialWrapper .testimonialBox {
   background-color: #ffffff;
   display: flex;
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 6px;
 }
 .testimonialWrapper .testimonialBox .testiDesc {
-  width: 75%;
+  width: 100%;
 }
 .testimonialWrapper .testimonialBox .testiDesc-quote {
   margin-top: 1rem;
 }
 .testimonialWrapper .testimonialBox .testiDesc-quote-text {
   margin-top: 0.5rem;
+  text-transform: capitalize;
 }
 .testimonialWrapper .testimonialBox .testiDesc-person {
   font-weight: 600;
@@ -2601,13 +2602,16 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
 .testimonialWrapper .testimonialBox .testiDesc-designation {
   font-weight: 400;
   font-size: 15px;
-  color: #383838;
+  color: rgba(68, 68, 68, 0.8);
 }
 .testimonialWrapper .testimonialBox .testiImage {
-  width: 25%;
-  margin-bottom: 0;
+  width: 1.5rem;
+  overflow: hidden;
+  border-radius: 100%;
+  margin-bottom: 0.5rem;
 }
 .testimonialWrapper .testimonialBox .testiImage img {
+  border-radius: 100%;
   width: 100%;
   min-height: 100%;
   offset: cover;

@@ -12,8 +12,8 @@
   margin-bottom: 1rem;
   border-radius: $radius;
   padding: 1rem;
-  box-shadow: 3px 3px 47px 0px rgba(39, 110, 182, 0.20);
-  // background: color(background-color);
+  // box-shadow: 3px 3px 47px 0px rgba(39, 110, 182, 0.20);
+  background: color(background-color);
   &-image {
     height: 18rem;
     // padding: 1.5rem;
@@ -239,16 +239,17 @@
   .testimonialBox {
     background-color: color(white);
     display: flex;
-    padding: 0.5rem;
+    padding:  1rem;
     border-radius: $radius;
 
     .testiDesc {
-      width: 75%;
+      width: 100%;
       &-quote {
         margin-top: 1rem;
 
         &-text {
           margin-top: 0.5rem;
+          text-transform: capitalize;
         }
       }
       &-person {
@@ -258,14 +259,19 @@
       &-designation {
         font-weight: 400;
         font-size: 15px;
-        color: color(text-light);
+        // color: color(text-light);
+        color: #444444CC;
       }
     }
 
     .testiImage {
-      width: 25%;
-      margin-bottom: 0;
+     width: 1.5rem;
+     overflow: hidden;
+      border-radius: 100%;
+      margin-bottom: 0.5rem;
       img {
+        // border-radius: 6.25rem;
+        border-radius: 100%;
         width: 100%;
         min-height: 100%;
         offset: cover;
