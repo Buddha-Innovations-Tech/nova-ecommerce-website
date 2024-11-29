@@ -87,13 +87,7 @@ const Navbar = () => {
               </button>
             </section>
             <section className='navWrapper-carts'>
-            <span className='myCart'>
-                <Link to='/cart'>
-                  <BsCart2 />
-                  &nbsp;
-                  <div className='cartCount'>{cartItems?.length}</div>
-                </Link>
-              </span>
+          
               {user ? (
                 <span className='navWrapper-carts-login'>
                   <Link to='/account'>
@@ -115,6 +109,13 @@ const Navbar = () => {
                   </Link>
                 </span>
               )}
+                <span className='myCart'>
+                <Link to='/cart'>
+                  <BsCart2 />
+                  &nbsp;
+                  <div className='cartCount'>{cartItems?.length}</div>
+                </Link>
+              </span>
             </section>
           </nav>
         </Container>

@@ -295,6 +295,7 @@
 .attractionWrapper {
   background: #f8f8f8;
   margin-top: 5rem;
+  padding: 1rem 0rem;
   .atttractionsBox {
     text-align: center;
     display: flex;
@@ -304,15 +305,36 @@
 
     &-item {
       padding: 1rem 0;
-      img {
-        background-color: color(primary, base);
-        height: 5rem;
-        width: 5rem;
-        border-radius: 100%;
+      border: 0.4px solid #0000004D;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      // img {
+      //   background-color: color(primary, base);
+      //   height: 5rem;
+      //   width: 5rem;
+      //   border-radius: 100%;
+      // }
+      figure{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
       }
       figcaption {
         margin-top: 1rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-transform: capitalize;
+
       }
+       & .iconWrapper{
+        &-icon{
+          height: 2.25rem;
+          width: 2.25rem;
+          text-align: center;
+          color: color(primary, base);
+        }
+       }
     }
   }
 }

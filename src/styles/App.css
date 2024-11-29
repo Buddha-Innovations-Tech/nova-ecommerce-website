@@ -731,7 +731,7 @@ thead {
 .bton {
   font-weight: 400;
   letter-spacing: 0.5px;
-  border-radius: 4px;
+  border-radius: 6.25rem;
   cursor: pointer;
   border-width: 1px;
   border-style: solid;
@@ -741,17 +741,17 @@ thead {
 .bton--sm {
   padding-left: 20px;
   padding-right: 20px;
-  line-height: 34px;
+  line-height: 38px;
 }
 .bton--md {
   padding-left: 28px;
   padding-right: 28px;
-  line-height: 39px;
+  line-height: 42px;
 }
 .bton--lg {
   padding-left: 36px;
   padding-right: 36px;
-  line-height: 39px;
+  line-height: 48px;
 }
 .bton--full {
   line-height: 48px;
@@ -1003,7 +1003,6 @@ thead {
   }
 }
 .navWrapper-search .mobSearchBton {
-  height: 42px;
   border-radius: 6.25rem;
 }
 @media all and (max-width: 576px) {
@@ -2622,6 +2621,7 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
 .attractionWrapper {
   background: #f8f8f8;
   margin-top: 5rem;
+  padding: 1rem 0rem;
 }
 .attractionWrapper .atttractionsBox {
   text-align: center;
@@ -2632,15 +2632,27 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
 }
 .attractionWrapper .atttractionsBox-item {
   padding: 1rem 0;
+  border: 0.4px solid rgba(0, 0, 0, 0.3019607843);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
 }
-.attractionWrapper .atttractionsBox-item img {
-  background-color: #276EB6;
-  height: 5rem;
-  width: 5rem;
-  border-radius: 100%;
+.attractionWrapper .atttractionsBox-item figure {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .attractionWrapper .atttractionsBox-item figcaption {
   margin-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.attractionWrapper .atttractionsBox-item .iconWrapper-icon {
+  height: 2.25rem;
+  width: 2.25rem;
+  text-align: center;
+  color: #276EB6;
 }
 
 .productWrapper {
