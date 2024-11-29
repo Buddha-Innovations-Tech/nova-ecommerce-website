@@ -15,9 +15,9 @@ section[role='Footer'] {
 
   .foooterInfo {
     margin-top: 3rem;
-    img {
-      width: 12rem;
-    }
+      img {
+        width: 12rem;
+      }
     p {
       color: white;
       line-height: 180%;
@@ -45,7 +45,6 @@ section[role='Footer'] {
       padding: 0;
       &-item {
         margin-top: 1rem;
-        text-decoration: underline;
         cursor: pointer;
         a {
           color: white;

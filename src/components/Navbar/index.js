@@ -4,7 +4,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 
-import BrandImage from '../../assets/images/Sunrise.png';
+import BrandImage from '../../assets/images/logo.png';
 import Account from '../../assets/icons/profile.png';
 import Cart from '../../assets/icons/shopping-cart.png';
 import Chevrone from '../../assets/icons/chevron.svg';
@@ -19,6 +19,7 @@ import { CiLogin } from 'react-icons/ci';
 import { FaRegUser } from 'react-icons/fa6';
 import { BsCart2 } from 'react-icons/bs';
 import { BiUserCircle } from "react-icons/bi";
+import Category from './Category';
 
 
 const Navbar = () => {
@@ -206,6 +207,7 @@ const Navbar = () => {
             </Container>
           </nav>
         </section> */}
+         <Category/>
       </section>
 
       <section className='mobileWrapper'>
@@ -272,6 +274,7 @@ const Navbar = () => {
             </NavLink>
           </section>
         </section>
+        
       </section>
     </>
   );

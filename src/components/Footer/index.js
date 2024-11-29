@@ -6,11 +6,15 @@ import VisaMaster from '../../assets/images/mastercard-visa.jpg';
 import tiktokIcon from '../../assets/images/tiktok.svg';
 import American from '../../assets/images/americanExp.png';
 import Vipps from '../../assets/images/vipps.png';
-import loorajWhite from '../../assets/images/looraj_white.svg';
+// import loorajWhite from '../../assets/images/looraj_white.svg';
+import loorajWhite from '../../assets/images/logo.png';
 import { RiFacebookCircleLine } from 'react-icons/ri';
 import { FaInstagram } from 'react-icons/fa';
 import { AiOutlineYoutube } from 'react-icons/ai';
 import { PiTiktokLogo } from 'react-icons/pi';
+import { IoChevronForwardSharp } from "react-icons/io5";
+
+
 const Footer = () => {
   return (
     <>
@@ -31,7 +35,7 @@ const Footer = () => {
                 </p>
               </section>
             </Col>
-            <Col md={2}>
+            <Col md={3}>
               <section className='Links'>
                 <header className='Links-title'>
                   <h4>Links</h4>
@@ -39,20 +43,20 @@ const Footer = () => {
 
                 <ul className='Links-box'>
                   <li className='Links-box-item'>
-                    <Link to='/about'>About Us</Link>
+                    <Link to='/about'> <IoChevronForwardSharp /> About Us</Link>
                   </li>
                   <li className='Links-box-item'>
-                    <Link to='/terms-conditions'>Terms & Conditions</Link>
+                    <Link to='/terms-conditions'> <IoChevronForwardSharp /> Terms & Conditions</Link>
                   </li>
                   <li className='Links-box-item'>
-                    <Link to='/privacy'>Privacy Policy</Link>
+                    <Link to='/privacy'> <IoChevronForwardSharp /> Privacy Policy</Link>
                   </li>
                   <li className='Links-box-item'>
-                    <Link to='/return'>Return Policy</Link>
+                    <Link to='/return'> <IoChevronForwardSharp /> Return Policy</Link>
                   </li>
                   <li className='Links-box-item'>
                     <Link to='/delivery-terms-conditions'>
-                      Delivery Terms and Condition
+                    <IoChevronForwardSharp /> Delivery Terms and Condition
                     </Link>
                   </li>
                 </ul>
@@ -99,7 +103,7 @@ const Footer = () => {
                       <div className='addHolder-value '>
                         <a href='mailto:loraajpersonalcare@gmail.com'>
                           <span style={{ color: 'white' }}>
-                            loraajpersonalcare@gmail.com
+                            technova@gmail.com
                           </span>
                         </a>
                       </div>
@@ -160,7 +164,7 @@ const Footer = () => {
 
           <hr />
           <section className='copyright'>
-            Looraj Ecommerce &copy; {new Date().getFullYear()} All Rights
+            Nova Ecommerce &copy; {new Date().getFullYear()} All Rights
             Reserved
           </section>
         </Container>

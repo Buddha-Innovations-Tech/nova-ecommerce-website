@@ -1344,7 +1344,6 @@ section[role=Footer] .Links-box {
 }
 section[role=Footer] .Links-box-item {
   margin-top: 1rem;
-  text-decoration: underline;
   cursor: pointer;
 }
 section[role=Footer] .Links-box-item a {
