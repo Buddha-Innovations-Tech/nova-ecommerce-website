@@ -13,9 +13,14 @@
   border-radius: $radius;
   padding: 1rem;
   // box-shadow: 3px 3px 47px 0px rgba(39, 110, 182, 0.20);
-  background: color(background-color);
+  // background: color(background-color);
+  border: 0.4px solid #00000033;
+  border-radius: 1rem;
   &-image {
     height: 18rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    overflow: hidden;
     // padding: 1.5rem;
 
     img {
@@ -55,7 +60,7 @@
       padding: 4px 6px;
       border-radius: 2px;
       position: absolute;
-      bottom: 6.3rem;
+      // bottom: 6.3rem;
       right: 1rem;
     }
     .noStock {
@@ -72,13 +77,15 @@
   }
 
   .cardOff {
-    background: color(primary, base);
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    padding: 0.1rem;
+    // background: color(primary, base);
+    // position: absolute;
+    // top: 5%;
+    // left: 5%;
+    @extend .priceValue;
+    padding-left: 1rem;
     font-size: 12px;
-    color: white;
+    color: color(gray, one) !important;
+   text-decoration: line-through;
   }
   &-Footer{
     display: flex;

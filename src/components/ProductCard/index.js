@@ -29,6 +29,7 @@ function ProductCard({ column, fProduct }) {
                 {fProduct.name}
               </h3>
               <div className='productCard-price'>
+                <div>
                 <span className='priceValue'>
                   {' '}
                   {currencyCode}{' '}
@@ -40,19 +41,17 @@ function ProductCard({ column, fProduct }) {
                     ? (fProduct.sellingPrice * Number(currencyValue)).toFixed(2)
                     : fProduct.sellingPrice * Number(currencyValue)}{' '}
                 </span>{' '}
+                
+  {fProduct.discount > 0 && ( 
+                <span className='cardOff'> Rs &nbsp;{fProduct.discount}</span>
+               )}   
+              </div>
                 <span
                   className={`${fProduct.stock > 0 ? 'stockValue' : 'noStock'}`}
                 >
                   {fProduct.stock > 0 ? 'IN STOCK' : 'OUT OF STOCK'}
                 </span>
               </div>
-              {fProduct.discount > 0 && (
-                <span className='cardOff'>{fProduct.discount}%off</span>
-              )}
-              {/* <div className='productCard-Footer'>
-<RatingProduct Rate={3}/> <small>(Total Rating )</small>
-              </div> */}
-              {/* <div className='productCard-Button'><button className='productCard-Button__cart'> <BsCart2/></button>  <botton bton--sm bton--primary >Learn More  </botton> </div> */}
             </section>
           </Link>
         </Col>
