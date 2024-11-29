@@ -233,14 +233,19 @@
 //testimonial
 
 .testimonialWrapper {
-  background: color(background-color);
+  // background: color(background-color);
   padding: 2rem 1rem;
+  & section{
+    text-align: start;
+  }
 
   .testimonialBox {
-    background-color: color(white);
+    // background-color: color(white);
     display: flex;
     padding:  1rem;
-    border-radius: $radius;
+    // border-radius: $radius;
+    border: 0.4px solid #00000040;
+    border-radius: 0.5rem;
 
     .testiDesc {
       width: 100%;

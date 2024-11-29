@@ -2576,14 +2576,16 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
 }
 
 .testimonialWrapper {
-  background: #f4f4f4;
   padding: 2rem 1rem;
 }
+.testimonialWrapper section {
+  text-align: start;
+}
 .testimonialWrapper .testimonialBox {
-  background-color: #ffffff;
   display: flex;
   padding: 1rem;
-  border-radius: 6px;
+  border: 0.4px solid rgba(0, 0, 0, 0.2509803922);
+  border-radius: 0.5rem;
 }
 .testimonialWrapper .testimonialBox .testiDesc {
   width: 100%;
