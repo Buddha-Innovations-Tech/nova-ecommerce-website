@@ -253,6 +253,9 @@
     // border-radius: $radius;
     border: 0.4px solid #00000040;
     border-radius: 0.5rem;
+    @include responsive-for(sm) {
+    margin-top: 1rem;
+    }
 
     .testiDesc {
       width: 100%;

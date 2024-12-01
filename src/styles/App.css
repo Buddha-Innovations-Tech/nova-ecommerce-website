@@ -2606,6 +2606,11 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   border: 0.4px solid rgba(0, 0, 0, 0.2509803922);
   border-radius: 0.5rem;
 }
+@media all and (max-width: 576px) {
+  .testimonialWrapper .testimonialBox {
+    margin-top: 1rem;
+  }
+}
 .testimonialWrapper .testimonialBox .testiDesc {
   width: 100%;
 }
