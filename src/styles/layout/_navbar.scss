@@ -62,7 +62,9 @@
   @include responsive-for(md) {
     flex-direction: column;
     text-align: center;
+    gap: 0.5rem;
   }
+ 
 
   &-brand {
     margin: 0;
@@ -93,6 +95,15 @@
     &:hover {
       color: color(primary, base) !important;
     }
+    @include responsive-for(sm) {
+   display: none;
+    }
+    @include responsive-for(md) {
+      display: none;
+       }
+       @include responsive-for(xlg) {
+       display: none;
+      }
   }
 
   &-search {
@@ -116,7 +127,8 @@
         width: 20rem;
       }
       @include responsive-for(lg) {
-        width: 14rem;
+        width: 10rem;
+
       }
       @include responsive-for(sm) {
         width: 19rem;
@@ -129,6 +141,9 @@
       border-radius: 6.25rem;
       // border-radius: 0 $radius $radius 0;
       @include responsive-for(sm) {
+        display: none;
+      }
+      @include responsive-for(lg) {
         display: none;
       }
     }

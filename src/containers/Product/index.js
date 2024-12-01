@@ -1,30 +1,31 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import React, { Fragment, useEffect, useState } from "react";
+import { Col, Container, Form, Row } from "react-bootstrap";
 
-import ImageGallery from 'react-image-gallery';
+import ImageGallery from "react-image-gallery";
 
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { clearProduct, getProductDetailAsync } from '../../redux/productSlice';
-import ProductCard from '../../components/ProductCard';
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { clearProduct, getProductDetailAsync } from "../../redux/productSlice";
+import ProductCard from "../../components/ProductCard";
 
-import ItemSkeleton from '../../components/Skeletons/ItemSkeleton';
+import ItemSkeleton from "../../components/Skeletons/ItemSkeleton";
 
-import LoaderComponent from '../../components/LoaderComponent';
+import LoaderComponent from "../../components/LoaderComponent";
 import {
   addToCart,
   resetCart,
   addToQuickBuyLoading,
   addToQuickBuySuccess,
   resetCartAdd,
-} from '../../redux/cartSlice';
-import Attractions from '../../components/Attractions';
-import ProductReview from '../../components/reviews';
-import { FaWhatsapp } from 'react-icons/fa';
+} from "../../redux/cartSlice";
+import Attractions from "../../components/Attractions";
+import ProductReview from "../../components/reviews";
+import { FaWhatsapp } from "react-icons/fa";
+import Table from 'react-bootstrap/Table';
 
 function Index() {
   const [isOpen, setIsOpen] = useState(false);
-  const [descTab, setDescTab] = useState('description');
+  const [descTab, setDescTab] = useState("description");
   const toggle = () => setIsOpen(!isOpen);
 
   const dispatch = useDispatch();
@@ -43,9 +44,9 @@ function Index() {
   const [qty, setQty] = useState(1);
 
   const [outOfStock, setOutOfStock] = useState(false);
-  const [outOfStockMsg, setoutOfStockMsg] = useState('');
+  const [outOfStockMsg, setoutOfStockMsg] = useState("");
   const [orderLimit, setOrderLimit] = useState(false);
-  const [variants, setVariants] = useState('');
+  const [variants, setVariants] = useState("");
 
   useEffect(() => {
     if (product) {
@@ -99,7 +100,7 @@ function Index() {
   useEffect(() => {
     if (outOfStockMsg) {
       setTimeout(() => {
-        setoutOfStockMsg('');
+        setoutOfStockMsg("");
       }, 2000);
     }
   }, [outOfStockMsg]);
@@ -114,20 +115,25 @@ function Index() {
       );
       setVariants((prev) => ({ ...prev, [type]: choice }));
       setQty(1);
-      setoutOfStockMsg('');
+      setoutOfStockMsg("");
     }
   };
 
+  const [activeSize, setActiveSize] = useState(null);
+
+  const handleButtonClick = (size) => {
+    setActiveSize(size);
+  };
   if (loading) return <ItemSkeleton />;
 
   return (
     <Fragment>
       {product && (
         <Container>
-          <section className=' productWrapper mt-3'>
+          <section className=" productWrapper mt-3">
             <Row>
               <Col lg={6}>
-                <section className='imageHolder'>
+                <section className="imageHolder">
                   {product?.gallery.length > 0 ? (
                     <ImageGallery
                       items={product.gallery.map((g) => ({
@@ -135,12 +141,12 @@ function Index() {
                         thumbnail: `${process.env.REACT_APP_IMAGE_PREFIX}${g}`,
                       }))}
                       showPlayButton={false}
-                      thumbnailPosition='left'
+                      thumbnailPosition="left"
                       showFullscreenButton={true}
                     />
                   ) : (
                     <img
-                      className='singleImageProduct'
+                      className="singleImageProduct"
                       src={`${process.env.REACT_APP_IMAGE_PREFIX}${product.heroImage}`}
                       alt={product.name}
                     />
@@ -148,9 +154,9 @@ function Index() {
                 </section>
               </Col>
               <Col lg={5}>
-                <section className='DetailsHolder'>
-                  <section className='DetailsHolder-header '>
-                    <h1 className='DetailsHolder-header-title'>
+                <section className="DetailsHolder">
+                  <section className="DetailsHolder-header ">
+                    <h1 className="DetailsHolder-header-title">
                       {product.name}
                     </h1>
                     {/* <div className='DetailsHolder-header-brand mb-3'>
@@ -164,8 +170,8 @@ function Index() {
 
                   <Row>
                     <Col>
-                      <section className='DetailsHolder-stock mt-3'>
-                        <span className='DetailsHolder-stock-price'>
+                      <section className="DetailsHolder-stock mt-3">
+                        <span className="DetailsHolder-stock-price">
                           {code}
                           {product.sellingPrice -
                             Math.floor(product.sellingPrice) !==
@@ -175,41 +181,41 @@ function Index() {
                         </span>
                         {product.discount > 0 && (
                           <>
-                            <span className='DetailsHolder-stock-cutprice ml-3'>
-                              {code}{' '}
+                            <span className="DetailsHolder-stock-cutprice ml-3">
+                              {code}{" "}
                               {product.price - Math.floor(product.price) !== 0
                                 ? product.price.toFixed(2)
                                 : product.price}
                             </span>
-                            <span className='DetailsHolder-stock-discount ml-3'>
+                            {/* <span className='DetailsHolder-stock-discount ml-3 '>
                               {product.discount}% off
-                            </span>
+                            </span> */}
                           </>
                         )}
-                        <div className='DetailsHolder-stock-vatInfo'>
+                        <div className="DetailsHolder-stock-vatInfo">
                           incl. of all tax
                         </div>
                       </section>
 
                       {product.options.length > 0 ? (
-                        <div className='DetailsHolder-variants'>
+                        <div className="DetailsHolder-variants">
                           {product.options.map((entry) => (
                             <div
-                              className='DetailsHolder-variants_item'
+                              className="DetailsHolder-variants_item"
                               key={entry.name}
                             >
-                              <span className='DetailsHolder-variants_item-name'>
+                              <span className="DetailsHolder-variants_item-name">
                                 {entry.name}
                               </span>
-                              <div className='btons-list'>
+                              <div className="btons-list">
                                 {entry.values.map((choice) => (
                                   <button
                                     key={choice}
-                                    type='button'
+                                    type="button"
                                     className={`btons-list_item ${
                                       variants[entry.name] === choice
-                                        ? 'active'
-                                        : ''
+                                        ? "active"
+                                        : ""
                                     }`}
                                     onClick={() =>
                                       handleVariant({
@@ -231,20 +237,53 @@ function Index() {
                           <div
                             className={`${
                               product.stock > 0
-                                ? 'DetailsHolder-stock-stockInfo '
-                                : 'DetailsHolder-stock-stockInfoDanger '
+                                ? "DetailsHolder-stock-stockInfo "
+                                : "DetailsHolder-stock-stockInfoDanger "
                             }`}
                           >
-                            {product.stock > 0 ? 'IN STOCK' : 'OUT OF STOCK'}
+                            {product.stock > 0 ? "IN STOCK" : "OUT OF STOCK"}
                           </div>
-                          <section className='DetailsHolder-qty mt-3'>
-                            <div className='DetailsHolder-qty-name'>
+                          <section className="DetailsHolder-varient mt-3">
+                            <div className="DetailsHolder-qty-name">
+                              Varient
+                              <div className="DetailsHolder-varient-buttons mt-3">
+                                <button
+                                  className={activeSize === "S" ? "active" : ""}
+                                  onClick={() => handleButtonClick("S")}
+                                >
+                                  S
+                                </button>
+                                <button
+                                  className={activeSize === "M" ? "active" : ""}
+                                  onClick={() => handleButtonClick("M")}
+                                >
+                                  M
+                                </button>
+                                <button
+                                  className={activeSize === "L" ? "active" : ""}
+                                  onClick={() => handleButtonClick("L")}
+                                >
+                                  L
+                                </button>
+                                <button
+                                  className={
+                                    activeSize === "XL" ? "active" : ""
+                                  }
+                                  onClick={() => handleButtonClick("XL")}
+                                >
+                                  XL
+                                </button>
+                              </div>
+                            </div>
+                          </section>
+                          <section className="DetailsHolder-qty mt-3">
+                            <div className="DetailsHolder-qty-name">
                               Quantity
                             </div>
 
-                            <div className='counterHolder'>
+                            <div className="counterHolder">
                               <div
-                                className='counterHolder-item'
+                                className="counterHolder-item"
                                 onClick={() => {
                                   if (Number(qty) > 1) {
                                     setQty(qty - 1);
@@ -253,11 +292,11 @@ function Index() {
                               >
                                 &minus;
                               </div>
-                              <div className='counterHolder-item Qtynumber'>
+                              <div className="counterHolder-item Qtynumber">
                                 {qty}
                               </div>
                               <div
-                                className='counterHolder-item'
+                                className="counterHolder-item"
                                 onClick={() => {
                                   if (
                                     qty < product.stock &&
@@ -270,12 +309,12 @@ function Index() {
                                 &#43;
                               </div>
                               {orderLimit && (
-                                <span className='cda mt-3 ms-3'>
+                                <span className="cda mt-3 ms-3">
                                   Order limit reached !
                                 </span>
                               )}
                               {outOfStock && (
-                                <span className='cda mt-3 ms-3'>
+                                <span className="cda mt-3 ms-3">
                                   Stock limit reached !
                                 </span>
                               )}
@@ -331,12 +370,12 @@ function Index() {
                               </Form.Group>
                             </section> */}
                           </section>
-                          <section className='DetailsHolder-cta mt-4 pb-4'>
+                          <section className="DetailsHolder-cta mt-4 pb-4">
                             {/* <Link to='/cart'> */}
 
                             <button
                               disabled={product.stock < 1}
-                              className='bton bton--md bton--primary prodbuttons'
+                              className="bton bton--md bton--ghost prodbuttons"
                               onClick={() => {
                                 if (qty > 0) {
                                   dispatch(
@@ -363,13 +402,13 @@ function Index() {
                                 }
                               }}
                             >
-                              <i className='fa  fa-shopping-cart'></i> Add to
+                              <i className="fa  fa-shopping-cart"></i> Add to
                               cart
                             </button>
-
+                            {/* className="bton bton--md bton--sec ms-0 ms-md-2 mt-2 mt-md-0 prodbuttons */}
                             {/* </Link> */}
                             <button
-                              className='bton bton--md bton--sec ms-0 ms-md-2 mt-2 mt-md-0 prodbuttons'
+                            className="bton bton--md bton--primary prodbuttons"
                               onClick={() => {
                                 if (qty > 0) {
                                   dispatch(addToQuickBuyLoading());
@@ -393,21 +432,21 @@ function Index() {
                                   setTimeout(() => {
                                     dispatch(resetCartAdd());
                                   }, 1000);
-                                  navigate('/cart/buy-now');
+                                  navigate("/cart/buy-now");
                                 }
                               }}
                             >
-                              <i className='fa fa-rocket'></i> Buy Now
+                              <i className="fa fa-rocket"></i> Buy Now
                             </button>
 
-                            <div className='mt-3'>
+                            {/* <div className="mt-3">
                               <div>Whattsapp:</div>
-                              <button className='bton bton--md whattsappButton'>
+                              <button className="bton bton--md whattsappButton">
                                 <FaWhatsapp /> <span>Order On Whatsapp</span>
                               </button>
-                            </div>
+                            </div> */}
                             {cartAdding && (
-                              <div className='csu mt-3 addedSuccess'>
+                              <div className="csu mt-3 addedSuccess">
                                 Product Added Successfully !!
                               </div>
                             )}
@@ -433,31 +472,31 @@ function Index() {
             </Row>
           </section>
 
-          <div style={{ marginTop: '3rem' }}>
-            <div className='descriptionTab '>
+          <div className="descriptionWrapper" style={{ marginTop: "3rem" }}>
+            <div className="descriptionTab ">
               <button
                 className={`${
-                  descTab === 'description' ? 'activeDescTab' : ''
+                  descTab === "description" ? "activeDescTab" : ""
                 }`}
-                onClick={() => setDescTab('description')}
+                onClick={() => setDescTab("description")}
               >
-                {' '}
+                {" "}
                 Description
               </button>
               <button
-                className={`${descTab === 'specs' ? 'activeDescTab' : ''}`}
-                onClick={() => setDescTab('specs')}
+                className={`${descTab === "specs" ? "activeDescTab" : ""}`}
+                onClick={() => setDescTab("specs")}
               >
                 Specification
               </button>
             </div>
-            <Row className='justify-content-center'>
-              {descTab === 'description' && (
+            <Row className="justify-content-start">
+              {descTab === "description" && (
                 <Col lg={8}>
-                  <div className=' productInfoWrapper'>
-                    <section className='productDesc '>
+                  <div className=" productInfoWrapper">
+                    <section className="productDesc ">
                       <p
-                        className='mt-3'
+                        className="mt-3"
                         dangerouslySetInnerHTML={{
                           __html: product.description,
                         }}
@@ -467,25 +506,37 @@ function Index() {
                 </Col>
               )}
 
-              {descTab === 'specs' && (
+              {descTab === "specs" && (
                 <Col lg={8}>
-                  <div className=' productTechInfo'>
-                    <section className='productTechDesc '>
-                      <ul className='mt-3'>
+                  <div className=" productTechInfo">
+                    <section className="productTechDesc ">
+                      {/* <ul className="mt-3">
                         {product.information &&
                           product.information.map((info) => {
                             return (
-                              <li className='productTechDesc-box mt-2 '>
-                                <div className='productTechDesc-box-key '>
+                              <li className="productTechDesc-box mt-2 ">
+                                <div className="productTechDesc-box-key ">
                                   {info.informationKey}
-                                </div>{' '}
-                                <div className='productTechDesc-box '>
+                                </div>{" "}
+                                <div className="productTechDesc-box ">
                                   {info.informationValue}
                                 </div>
                               </li>
                             );
                           })}
-                      </ul>
+                      </ul> */}
+                    <Table  bordered className="border 0.4px solid #00000063" >
+                    <tbody>
+        <tr >
+          <td>Color</td>
+          <td>White, Pink, Black</td>
+        </tr>
+        <tr>
+          <td>Size</td>
+          <td>S, M, L, XL</td>
+        </tr>
+        </tbody>
+                      </Table>
                     </section>
                   </div>
                 </Col>
@@ -495,11 +546,11 @@ function Index() {
           {/* <ProductReview id={product._id} /> */}
           {product.related.length > 0 && (
             <>
-              <h1 className='text-center m-5'>Related Products</h1>
+              <h1 className="text-center m-5">Related Products</h1>
 
-              <Row className='justify-content-center'>
+              <Row className="justify-content-center">
                 {product.related.map((rp) => (
-                  <ProductCard column='3' fProduct={rp} />
+                  <ProductCard column="3" fProduct={rp} /> 
                 ))}
               </Row>
             </>

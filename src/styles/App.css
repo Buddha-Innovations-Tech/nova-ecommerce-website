@@ -782,7 +782,7 @@ thead {
   color: white;
 }
 .bton--ghost {
-  border-radius: 4px;
+  border-radius: 6.25rem;
   border-color: #276EB6;
   color: #276EB6;
   background-color: #ffffff;
@@ -937,6 +937,7 @@ thead {
   .navWrapper {
     flex-direction: column;
     text-align: center;
+    gap: 0.5rem;
   }
 }
 .navWrapper-brand {
@@ -946,7 +947,7 @@ thead {
   width: 10rem;
   margin-top: 1rem;
 }
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1400px) {
   .navWrapper-brand img {
     margin-right: 0rem;
   }
@@ -970,6 +971,21 @@ thead {
 .navWrapper-about:hover {
   color: #276EB6 !important;
 }
+@media all and (max-width: 576px) {
+  .navWrapper-about {
+    display: none;
+  }
+}
+@media all and (max-width: 768px) {
+  .navWrapper-about {
+    display: none;
+  }
+}
+@media all and (max-width: 1400px) {
+  .navWrapper-about {
+    display: none;
+  }
+}
 .navWrapper-search {
   border: 0.6px solid rgba(0, 0, 0, 0.4509803922);
   border-radius: 6.35rem;
@@ -986,14 +1002,14 @@ thead {
   border-radius: 6px 0 0 6px;
   font-size: 16px;
 }
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1400px) {
   .navWrapper-search input {
     width: 20rem;
   }
 }
 @media all and (max-width: 992px) {
   .navWrapper-search input {
-    width: 14rem;
+    width: 10rem;
   }
 }
 @media all and (max-width: 576px) {
@@ -1006,6 +1022,11 @@ thead {
   border-radius: 6.25rem;
 }
 @media all and (max-width: 576px) {
+  .navWrapper-search .mobSearchBton {
+    display: none;
+  }
+}
+@media all and (max-width: 992px) {
   .navWrapper-search .mobSearchBton {
     display: none;
   }
@@ -2734,6 +2755,7 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   padding: 0.3rem 0.7rem;
   margin-bottom: 1rem;
   border-radius: 4px;
+  text-decoration: line-through;
 }
 .productWrapper .DetailsHolder-stock-vatInfo {
   font-size: 12px;
@@ -2775,6 +2797,23 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   color: #1d2a35;
   font-weight: 500;
   font-size: 16px;
+}
+.productWrapper .DetailsHolder-varient-buttons {
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.productWrapper .DetailsHolder-varient-buttons button {
+  border: 0.4px solid rgba(0, 0, 0, 0.4);
+  padding: 0.5rem 0.75rem;
+  background-color: transparent;
+}
+.productWrapper .DetailsHolder-varient-buttons button.active {
+  background-color: black;
+  color: white;
 }
 .productWrapper .DetailsHolder-qty-name {
   font-weight: 500 !important;
@@ -2831,6 +2870,11 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   background-color: #276EB6;
   color: #ffffff;
 }
+.productWrapper .DetailsHolder-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
 
 .productInfoWrapper {
   background: #ffffff;
@@ -2847,9 +2891,9 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   padding: 1rem;
   height: 100%;
 }
-.productTechInfo .productTechDesc {
-  max-height: 60vh;
-  overflow-y: auto;
+.productTechInfo .productTechDesc td {
+  border: 1px solid rgba(0, 0, 0, 0.3882352941) !important;
+  color: #1d2a35 !important;
 }
 .productTechInfo .productTechDesc ul {
   padding: 0;
@@ -2937,7 +2981,7 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   }
 }
 .prodbuttons {
-  width: 40%;
+  width: 100%;
 }
 @media all and (max-width: 576px) {
   .prodbuttons {
@@ -2986,20 +3030,25 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   color: white;
 }
 
-.descriptionTab {
-  text-align: center;
+.descriptionWrapper {
+  border: 0.4px solid rgba(0, 0, 0, 0.2509803922);
+  border-radius: 0.5rem;
+  padding: 1.75rem;
+}
+.descriptionWrapper .descriptionTab {
+  text-align: start;
   margin-bottom: 2rem;
 }
-.descriptionTab button {
+.descriptionWrapper .descriptionTab button {
   padding: 0.5rem 1rem;
   border: none;
-  border-bottom: 4px solid #93c7e7;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1490196078);
   background-color: white;
   color: #383838;
   font-size: 20px;
 }
-.descriptionTab .activeDescTab {
-  border-bottom: 4px solid #276EB6;
+.descriptionWrapper .descriptionTab .activeDescTab {
+  border-bottom: 2px solid black;
   font-weight: 600;
   color: #1d2a35;
 }
@@ -3553,7 +3602,7 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
 .aboutImage img {
   width: 80%;
 }
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1400px) {
   .aboutImage {
     margin-top: 5rem;
   }

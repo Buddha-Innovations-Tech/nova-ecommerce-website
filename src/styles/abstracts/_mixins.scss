@@ -61,7 +61,8 @@ $xs: 480px;
 $sm: 576px; // FOR SMALL DEVICES == sm
 $md: 768px; // FOR MEDIUM DEVICES == md
 $lg: 992px; // FOR LARGE DEVICES == lg
-$xlg: 1200px; // FOR EXTRA LARGE DEVICES == xlg
+$xlg: 1400px; // FOR EXTRA LARGE DEVICES == xlg
+
 
 @mixin responsive-for($size) {
   @if $size == xs {
