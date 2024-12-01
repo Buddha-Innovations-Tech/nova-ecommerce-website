@@ -338,3 +338,31 @@
     }
   }
 }
+
+
+.saleBannerWrapper{
+  padding: 2rem 1rem;
+&-image{
+  background-image:url('/public/banner.png') ;
+  background-size:cover ;
+  // height: 100vh;
+  border-radius: 0.5rem;
+}
+&-text{
+  padding: 10rem 5rem;
+  @include responsive-for(md) {
+    padding: 8rem 1rem;
+  }
+  & h3{
+    font-size: $h2;
+    color: white;
+    font-weight: 600;
+  }
+  & h2{
+    font-size: $h1;
+    color: white;
+    font-weight: 700;
+    line-height: 4.5rem;
+  }
+}
+}

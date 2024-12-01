@@ -2675,6 +2675,34 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   color: #276EB6;
 }
 
+.saleBannerWrapper {
+  padding: 2rem 1rem;
+}
+.saleBannerWrapper-image {
+  background-image: url("/public/banner.png");
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+.saleBannerWrapper-text {
+  padding: 10rem 5rem;
+}
+@media all and (max-width: 768px) {
+  .saleBannerWrapper-text {
+    padding: 8rem 1rem;
+  }
+}
+.saleBannerWrapper-text h3 {
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
+}
+.saleBannerWrapper-text h2 {
+  font-size: 28px;
+  color: white;
+  font-weight: 700;
+  line-height: 4.5rem;
+}
+
 .productWrapper {
   background: #ffffff;
   border-radius: 6px;
@@ -2890,6 +2918,14 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   border-radius: 6px;
   padding: 1rem;
   height: 100%;
+}
+.productTechInfo .productTechDesc .Table {
+  border: 0.4px solid rgba(0, 0, 0, 0.3882352941) !important;
+  border-radius: 0.25rem !important;
+}
+.productTechInfo .productTechDesc tbody {
+  border: 0.4px solid rgba(0, 0, 0, 0.3882352941) !important;
+  border-radius: 0.25rem !important;
 }
 .productTechInfo .productTechDesc td {
   border: 1px solid rgba(0, 0, 0, 0.3882352941) !important;

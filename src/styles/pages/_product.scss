@@ -249,6 +249,15 @@
     // h2 {
     // }
     
+ .Table{
+  border: 0.4px solid #00000063 !important;
+  border-radius: 0.25rem !important;
+}
+& tbody{
+  border: 0.4px solid #00000063 !important;
+  border-radius: 0.25rem !important;
+}
+
    td{
     border: 1px solid  #00000063 !important;
     color: color(text-dark) !important;

@@ -525,7 +525,7 @@ function Index() {
                             );
                           })}
                       </ul> */}
-                    <Table  bordered className="border 0.4px solid #00000063" >
+                    <Table  bordered className="Table"  >
                     <tbody>
         <tr >
           <td>Color</td>

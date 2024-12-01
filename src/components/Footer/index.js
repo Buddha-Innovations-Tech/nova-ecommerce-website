@@ -22,7 +22,7 @@ const Footer = () => {
       <section role='Footer'>
         <Container>
           <Row className='justify-content-between'>
-            <Col md={3}>
+            <Col lg={3} md={6}>
               <section className='foooterInfo'>
                 <header className='Links-title'>
                   <img src={loorajWhite} alt='' />
@@ -35,7 +35,7 @@ const Footer = () => {
                 </p>
               </section>
             </Col>
-            <Col md={3}>
+            <Col lg={3} md={6}>
               <section className='Links'>
                 <header className='Links-title'>
                   <h4>Links</h4>
@@ -62,7 +62,7 @@ const Footer = () => {
                 </ul>
               </section>
             </Col>
-            <Col md={3}>
+            <Col lg={3} md={6}>
               <section className='contact'>
                 <header className='contact-title'>
                   <h4>Customer Support</h4>
@@ -112,7 +112,7 @@ const Footer = () => {
                 </ul>
               </section>
             </Col>
-            <Col md={3}>
+            <Col lg={3} md={6}>
               <section className='socialMedia'>
                 <header className='socialMedia-title'>
                   <h4>Social Media</h4>
