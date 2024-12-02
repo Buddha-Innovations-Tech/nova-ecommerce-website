@@ -1,7 +1,7 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
-import ProductCard from '../ProductCard';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Container, Row } from "react-bootstrap";
+import ProductCard from "../ProductCard";
 
 const LatestProducts = () => {
   const [newArrival, setNewArrival] = useState([]);
@@ -9,7 +9,7 @@ const LatestProducts = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const fProducts = await axios.get('/api/products/new');
+      const fProducts = await axios.get("/api/products/new");
       setNewArrival(fProducts.data);
       setNLoading(false);
     };
@@ -21,13 +21,13 @@ const LatestProducts = () => {
   return (
     <>
       <Container>
-        <section className='layoutTitle'>
+        <section className="layoutTitle">
           <h1>New Products</h1>
           <p>Explore just landed products in our store</p>
         </section>
         <section>
           <Row>
-            {newArrival.map((c, i) => (
+            {newArrival.slice(0, 8).map((c, i) => (
               <ProductCard column={3} key={i} fProduct={c} />
             ))}
           </Row>

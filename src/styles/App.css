@@ -2377,16 +2377,56 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
 .layoutTitle {
   margin-top: 5rem;
   margin-bottom: 3rem;
-  text-align: center;
+  text-align: start;
 }
 .layoutTitle h1 {
   font-weight: 700 !important;
 }
 
+.shopByCatrgoryWrapper .productCarousel {
+  padding: 0rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shopByCatrgoryWrapper .productCarousel .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: #276EB6;
+}
+.shopByCatrgoryWrapper .productCarousel .categoryProduct {
+  border: 0.4px solid rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.shopByCatrgoryWrapper .productCarousel .categoryProduct img {
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
+}
+.shopByCatrgoryWrapper .productCarousel .categoryProduct p {
+  margin-top: 1rem;
+  color: #1d2a35;
+  font-weight: 500 !important;
+  text-decoration: underline;
+  letter-spacing: 0.5px;
+  height: 2.3rem;
+  overflow: hidden;
+  font-size: 15px !important;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  /* autoprefixer: off */
+  -webkit-line-clamp: 2;
+}
+
 .productCard {
   position: relative;
   margin-bottom: 1rem;
-  border-radius: 6px;
   padding: 1rem;
   border: 0.4px solid rgba(0, 0, 0, 0.2);
   border-radius: 1rem;

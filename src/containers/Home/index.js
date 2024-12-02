@@ -6,6 +6,7 @@ import LatestProducts from '../../components/LatestProducts';
 import Testimonials from '../../components/Testimonials';
 import Attractions from '../../components/Attractions';
 import Salebanner from '../../components/salebanner';
+import ShopByCategory from '../../components/ShopByCategory';
 
 const Home = () => {
   useEffect(() => {
@@ -14,6 +15,7 @@ const Home = () => {
   return (
     <>
       <CarouselBox />
+      <ShopByCategory/>
       <LatestProducts />
       <BestSelling />
       <Ads />
