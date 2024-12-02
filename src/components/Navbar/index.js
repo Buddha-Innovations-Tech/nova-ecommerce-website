@@ -19,7 +19,7 @@ import { CiLogin } from 'react-icons/ci';
 import { FaRegUser } from 'react-icons/fa6';
 import { BsCart2 } from 'react-icons/bs';
 import { BiUserCircle } from "react-icons/bi";
-import Category from './Category';
+
 
 
 const Navbar = () => {
@@ -120,7 +120,7 @@ const Navbar = () => {
             </section>
           </nav>
         </Container>
-        {/* <section>
+        <section>
           <nav className='navbarBox'>
             <Container>
               <ul className='menu p-0 m-0'>
@@ -198,16 +198,16 @@ const Navbar = () => {
                       </>
                     );
                   })}
-                <li className='menu--items'>
+                {/* <li className='menu--items'>
                   <Link className='navitems' to={`/cleaning`}>
                     Cleaning Facilities
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </Container>
           </nav>
-        </section> */}
-         <Category/>
+        </section>
+         {/* <Category/> */}
       </section>
 
       <section className='mobileWrapper'>
@@ -276,6 +276,7 @@ const Navbar = () => {
         </section>
         
       </section>
+      
     </>
   );
 };
