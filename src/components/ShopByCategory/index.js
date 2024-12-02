@@ -26,10 +26,21 @@ function ShopByCategory() {
   };
 
  
-  const loopedItems = [
+  let loopedItems = [
     ...categories.slice(visibleIndex),
     ...categories.slice(0, visibleIndex),
   ];
+
+
+  if (loopedItems.length < 4) {
+    // const lastCategory = loopedItems[loopedItems.length - 1];
+    const firstCategory = loopedItems[0];
+    while (loopedItems.length < 4) {
+      loopedItems.push(firstCategory); 
+    }
+  }
+
+ 
   const itemsToShow = loopedItems.slice(0, 4);
 
   return (
@@ -45,21 +56,19 @@ function ShopByCategory() {
           <IoChevronBackOutline onClick={prev} className="icon" />
         </div>
         <Container>
-          <Row>
+        <Row>
             {loading ? (
               <div>Loading...</div> 
             ) : (
               categories && categories.length > 0 && itemsToShow.map((cat) => (
-                cat.subCategory.length > 0 && cat.subCategory.map((sub) => (
-                  <Col md={3} sm={6} key={sub._id}>
-                    <div className="categoryProduct">
-                      <Link to={`/category/${cat.slug}`} state={{ cat_id: cat._id, subData: { _id: sub._id, name: sub.name } }}>
-                      <img  src={img1} />
-                        <p>{sub.name}</p>
-                      </Link>
-                    </div>
-                  </Col>
-                ))
+                <Col md={3} sm={6} key={cat.id}>
+                  <div className="categoryProduct">
+                    <Link to={`/category/${cat.slug}`} state={{ cat_id: cat._id, subData: null, sub2Data: null }}>
+                      <img src={img1} alt={cat.name} />
+                      <p>{cat.name}</p>
+                    </Link>
+                  </div>
+                </Col>
               ))
             )}
           </Row>

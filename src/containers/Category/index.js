@@ -21,7 +21,6 @@ import Pagination from "../../components/P";
 import CategorySkeleton from "../../components/Skeletons/CategorySkeleton";
 import CategoryProdSkeletons from "../../components/Skeletons/CategoryProdSkeletons";
 import NoItems from "../../components/NoItems";
-import { MdOutlineChevronRight } from "react-icons/md";
 
 const Categories = () => {
   const [show, setShow] = useState(false);
@@ -149,14 +148,8 @@ const Categories = () => {
     <div>
       <Container>
         <section className="mt-4">
-          Home <MdOutlineChevronRight />
-          {cat_id && categories.find((fc) => fc._id === cat_id)?.name}{" "}
-          {sublData !== null && (
-            <>
-              {" "}
-              <MdOutlineChevronRight /> <strong>{sublData.name}</strong>
-            </>
-          )}
+          Home / {cat_id && categories.find((fc) => fc._id === cat_id)?.name}/
+          {sublData !== null && <strong>{sublData.name}</strong>}
         </section>
 
         <section className="allproductInfo">
@@ -183,7 +176,9 @@ const Categories = () => {
             <i className="fa fa-filter "></i>filters
           </button>
           <Offcanvas show={show} onHide={handleClose} placement="bottom">
-            <Offcanvas.Header closeButton></Offcanvas.Header>
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title></Offcanvas.Title>
+            </Offcanvas.Header>
             <Offcanvas.Body>
               <section className="mobfilterHolder">
                 <section className="mb-3">
@@ -322,6 +317,49 @@ const Categories = () => {
           <Row>
             <Col md={3}>
               <section className="filterHolder">
+                {sub2Data === null && (
+                  <>
+                    <h2 className="filterHolder-title">Filters</h2>
+                    <ul>
+                      {cat_id &&
+                        categories &&
+                        categories
+                          .find((fc) => fc._id.toString() === cat_id.toString())
+                          ?.subCategory.map((sub) => {
+                            return (
+                              <li>
+                                <Form.Group
+                                  className="mb-3"
+                                  controlId={`formBasicCheckbox-${sub._id}`}
+                                >
+                                  <Form.Check
+                                    type="checkbox"
+                                    label={sub.name}
+                                    checked={
+                                      filterSub.find((s) => s._id === sub._id)
+                                        ? true
+                                        : false
+                                    }
+                                    onChange={(e) => {
+                                      if (e.target.checked) {
+                                        setFilterSub([...filterSub, sub]);
+                                      } else {
+                                        setFilterSub([
+                                          ...filterSub.filter(
+                                            (f) => f._id !== sub._id
+                                          ),
+                                        ]);
+                                      }
+                                    }}
+                                  />
+                                </Form.Group>
+                              </li>
+                            );
+                          })}
+                    </ul>
+                    <hr />
+                  </>
+                )}
                 {sub2Data !== null && (
                   <>
                     <section className="suprtSubFilter">
@@ -348,7 +386,7 @@ const Categories = () => {
                 )}
                 <section className="rangeHolder">
                   <section className="rangeHolder-title">
-                    <div>Price Range</div>
+                    <h2>Price Range</h2>
                   </section>
                   {filterError !== "" && <p>{filterError}</p>}
                   <section className="rangeHolder-input">
