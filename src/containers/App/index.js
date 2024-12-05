@@ -51,7 +51,7 @@ const App = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // axios.defaults.baseURL = "http://localhost:8010";
-  axios.defaults.baseURL = 'https://backend.sunrisemultitradelink.com';
+  axios.defaults.baseURL = 'https://backend.novaaitechnz.com';
   // axios.defaults.baseURL = 'http://192.168.5.23:8008';
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const App = () => {
   );
   const getLoggedInUser = async () => {
     const { data } = await axios.get(
-      'https://backend.looraj.com/api/google-user',
+      'https://backend.novaaitechnz.com/api/google-user',
       {
         withCredentials: true,
       }
