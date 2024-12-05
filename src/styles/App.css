@@ -547,14 +547,14 @@ html {
 }
 
 div {
-  font-family: "Albert Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
   margin: 0;
   font-weight: 400;
   background: #f8f8f8;
-  font-family: "Albert Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1,
@@ -565,7 +565,7 @@ h2,
   margin-bottom: 0.1rem;
   color: #1d2a35;
   line-height: 150%;
-  font-family: "Albert Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1 {
@@ -1153,7 +1153,7 @@ thead {
   font-size: 14px;
   font-weight: 400;
   padding-top: 0.7rem;
-  color: red;
+  color: #1d2a35;
 }
 .navbarBox .menu--items .sub--menu .subcatWrapper--itemholder__items:hover {
   color: #276EB6;

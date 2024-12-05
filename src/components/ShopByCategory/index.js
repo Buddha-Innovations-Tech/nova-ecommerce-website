@@ -47,8 +47,8 @@ function ShopByCategory() {
     <div className="shopByCatrgoryWrapper">
       <Container>
         <section className="layoutTitle">
-          <h1>Explore by Category</h1>
-          <p>Browse products organized by category for easier shopping.</p>
+          <h1>Discover Products by Category</h1>
+          <p>Shop effortlessly with products organized by category for a seamless experience.</p>
         </section>
       </Container>
       <section className="productCarousel">

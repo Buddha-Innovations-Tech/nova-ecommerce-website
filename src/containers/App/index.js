@@ -45,6 +45,7 @@ import AboutUs from '../AboutUs';
 import DeliveryTerms from '../DeliveryTerms';
 import Orders from '../Orders';
 import Reviews from '../reviews';
+import SubCategory from '../subCategory';
 
 const App = () => {
   const location = useLocation();
@@ -104,6 +105,7 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='/category/:slug' element={<Category />} />
             <Route path='/product/:slug' element={<Product />} />
+            <Route path='/category/:slug/:subSlug' element={<SubCategory />} />
             <Route path='/verify/:id/:token' element={<Verify />} />
             <Route path='/forgot-password' element={<ForgotPassword />} />
             <Route path='/forgot-password/:token' element={<ResetPassword />} />
