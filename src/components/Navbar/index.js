@@ -45,7 +45,7 @@ const Navbar = () => {
                 <img src={BrandImage} alt='Brand Logo' />
               </Link>
             </figure>
-            <CategoryDropdown categories={categories} />
+            {/* <CategoryDropdown categories={categories} /> */}
             <section>
               <Link to='/about'>
                 <span className='navWrapper-about'>ABOUT US</span>
@@ -147,7 +147,7 @@ const Navbar = () => {
                                 >
                                   <div className='subcatWrapper--title'>
                                     <Link
-                                      to={`/category/${cat.slug}/${sub.slug}`}
+                                      to={`/category/${cat.slug}`}
                                       state={subData}
                                     >
                                       {sub.name}
@@ -174,7 +174,12 @@ const Navbar = () => {
                                             className='subcatWrapper--itemholder__items'
                                             key={sub2._id}
                                           >
-                                            {sub2.name}
+                                            <Link
+                                              to={`/category/${cat.slug}`}
+                                              state={sub2Data}
+                                            >
+                                              {sub2.name}
+                                            </Link>
                                           </li>
                                         );
                                       })}
