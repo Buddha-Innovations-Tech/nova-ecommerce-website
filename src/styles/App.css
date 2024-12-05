@@ -2401,19 +2401,16 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
 }
 .shopByCatrgoryWrapper .productCarousel .categoryProduct img {
   width: 100%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  overflow: hidden;
+  height: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.shopByCatrgoryWrapper .productCarousel .categoryProduct p {
-  margin-top: 1rem;
+.shopByCatrgoryWrapper .productCarousel .categoryProduct div {
+  margin-top: 1.5rem;
   color: #1d2a35;
   font-weight: 500 !important;
-  text-decoration: underline;
-  letter-spacing: 0.5px;
-  height: 2.3rem;
-  overflow: hidden;
-  font-size: 15px !important;
+  font-size: 18px;
+  text-align: center;
   display: block;
   display: -webkit-box;
   -webkit-line-clamp: 4;
