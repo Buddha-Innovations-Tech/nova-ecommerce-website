@@ -16,8 +16,7 @@ const Privacy = () => {
         <br />
         <br />
         For any inquiries about this privacy policy or our practices, please
-        contact our customer service at{' '}
-        <b> sunrise.multitradelink@gmail.com.</b>
+        contact our customer service at <b> technova@gmail.com.</b>
         <br />
         <br />
         <b>Collection and Use of Personal Data</b>
@@ -58,9 +57,9 @@ const Privacy = () => {
         <br />
         You have the right to access, correct, and delete your personal data by
         using the option under the account section under my details:
-        https://sunrisemultitradelink.com/account . If you have any questions or
+        https://https://novaaitechnz.com/account . If you have any questions or
         requests regarding the collection and use of your personal data, please
-        contact us at sunrise.multitradelink@gmail.com.
+        contact us at technova@gmail.com.
         <br />
         <br />
         By using our online store and mobile app available on major app stores,
@@ -72,7 +71,7 @@ const Privacy = () => {
         <b>Account Deletion</b>
         <br />
         You can delete your account from
-        https://sunrisemultitradelink.com/account anytime and all your personal
+        https://https://novaaitechnz.com/account anytime and all your personal
         data related with your account will be permanently deleted from our
         system.
         <br />
