@@ -52,8 +52,8 @@ const App = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  axios.defaults.baseURL = "http://localhost:5000";
-  // axios.defaults.baseURL = "https://backend.novaaitechnz.com";
+  // axios.defaults.baseURL = "http://localhost:5000";
+  axios.defaults.baseURL = "https://backend.novaaitechnz.com";
   // axios.defaults.baseURL = 'http://192.168.5.23:8008';
 
   useEffect(() => {
