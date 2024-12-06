@@ -1,37 +1,37 @@
-import React from 'react';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import Footer from '../../components/Footer';
+import React from "react";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 //components
 
 // import SideBar from '../../components/Sidebar';
-import NavBar from '../../components/Navbar';
-import Category from '../Category';
+import NavBar from "../../components/Navbar";
+import Category from "../Category";
 
 //pages
 
-import Home from '../Home';
-import Product from '../Product';
-import Cart from '../Cart';
-import Checkout from '../Checkout';
-import Account from '../Account';
-import CleaningFacility from '../CleaningFacility';
-import SearchResults from '../SearchResults';
-import Verify from '../Verify';
-import ForgotPassword from '../ForgotPassword';
-import ResetPassword from '../ResetPassword';
+import Home from "../Home";
+import Product from "../Product";
+import Cart from "../Cart";
+import Checkout from "../Checkout";
+import Account from "../Account";
+import CleaningFacility from "../CleaningFacility";
+import SearchResults from "../SearchResults";
+import Verify from "../Verify";
+import ForgotPassword from "../ForgotPassword";
+import ResetPassword from "../ResetPassword";
 
-import axios from 'axios';
-import More from '../More';
-import Login from '../Login';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import axios from "axios";
+import More from "../More";
+import Login from "../Login";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   getSubscriberDetailsAsync,
   logout,
   loggedOut,
   subscriberGoogleLoginAsync,
-} from '../../redux/subscriberSlice';
+} from "../../redux/subscriberSlice";
 
 import ErrorPage from "../Error404";
 import MobCategories from "../MobCategories";
@@ -52,21 +52,16 @@ const App = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-<<<<<<< HEAD
   axios.defaults.baseURL = "http://localhost:5000";
   // axios.defaults.baseURL = "https://backend.novaaitechnz.com";
-=======
-  // axios.defaults.baseURL = "http://localhost:8010";
-  axios.defaults.baseURL = 'https://backend.novaaitechnz.com';
->>>>>>> 2333df008a76d32594dc982adf45e438c4176923
   // axios.defaults.baseURL = 'http://192.168.5.23:8008';
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const message = params.get('message');
+    const message = params.get("message");
     if (message) {
-      localStorage.setItem('userInfo', message); // Outputs the response message
-      navigate('/');
+      localStorage.setItem("userInfo", message); // Outputs the response message
+      navigate("/");
       window.location.reload();
     }
   }, [location.search]);
@@ -76,7 +71,7 @@ const App = () => {
   );
   const getLoggedInUser = async () => {
     const { data } = await axios.get(
-      'https://backend.novaaitechnz.com/api/google-user',
+      "https://backend.novaaitechnz.com/api/google-user",
       {
         withCredentials: true,
       }
@@ -86,7 +81,7 @@ const App = () => {
         _id: data._id,
         name: data.name,
         email: data.email,
-        provider: 'google',
+        provider: "google",
         accessToken: data.accessToken,
         refreshToken: data.refreshToken,
       })
@@ -106,9 +101,8 @@ const App = () => {
       <NavBar />
 
       <main>
-        <section className='contentWrapper'>
+        <section className="contentWrapper">
           <Routes>
-<<<<<<< HEAD
             <Route path="/" element={<Home />} />
             <Route path="/category/:slug" element={<Category />} />
             <Route path="/product/:slug" element={<Product />} />
@@ -128,50 +122,30 @@ const App = () => {
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/payment-result" element={<PaymentResult />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
-=======
-            <Route path='/' element={<Home />} />
-            <Route path='/category/:slug' element={<Category />} />
-            <Route path='/product/:slug' element={<Product />} />
-            <Route path='/category/:slug/:subSlug' element={<SubCategory />} />
-            <Route path='/verify/:id/:token' element={<Verify />} />
-            <Route path='/forgot-password' element={<ForgotPassword />} />
-            <Route path='/forgot-password/:token' element={<ResetPassword />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/cart/buy-now' element={<Cart />} />
-            <Route path='/checkout' element={<Checkout />} />
-            <Route path='/shipping' element={<Shipping />} />
-            <Route path='/shipping/buy-now' element={<Shipping />} />
-            <Route path='/checkout' element={<Checkout />} />
-            <Route path='/checkout/buy-now' element={<Checkout />} />
-            <Route path='/account' element={<Account />} />
-            <Route path='/orders' element={<Orders />} />
-            <Route path='/reviews' element={<Reviews />} />
->>>>>>> 2333df008a76d32594dc982adf45e438c4176923
             {/* <Route path='/cleaning' element={<CleaningFacility />} /> */}
-            <Route path='/about' element={<AboutUs />} />
+            <Route path="/about" element={<AboutUs />} />
             <Route
-              path='/delivery-terms-conditions'
+              path="/delivery-terms-conditions"
               element={<DeliveryTerms />}
             />
-            <Route path='/terms-conditions' element={<Terms />} />
-            <Route path='/refund' element={<Refund />} />
-            <Route path='/return' element={<Return />} />
-            <Route path='/privacy' element={<Privacy />} />
-            <Route path='/search' element={<SearchResults />} />
-            <Route path='/mobcat' element={<MobCategories />} />
-            <Route path='/more' element={<More />} />
-            <Route path='*' element={<ErrorPage />} />
+            <Route path="/terms-conditions" element={<Terms />} />
+            <Route path="/refund" element={<Refund />} />
+            <Route path="/return" element={<Return />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/search" element={<SearchResults />} />
+            <Route path="/mobcat" element={<MobCategories />} />
+            <Route path="/more" element={<More />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </section>
 
         <a
-          className='whattsapp'
-          target='_blank'
-          rel='noopener noreferrer'
-          href='https://wa.me/4745534581'
+          className="whattsapp"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://wa.me/4745534581"
         >
-          <i className='fa fa-whatsapp'></i>
+          <i className="fa fa-whatsapp"></i>
         </a>
       </main>
       <Footer />
