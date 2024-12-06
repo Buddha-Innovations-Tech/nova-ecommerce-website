@@ -29,6 +29,11 @@ const QuantityBox = ({ number, item }) => {
   const dispatch = useDispatch();
   const [previousValue, setPreviousValue] = useState(number);
   const [qty, setQty] = useState(number);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const onChange = (e) => {
     if (!location.pathname.includes('buy-now')) {
       if (Number(e.target.value) > previousValue) {
@@ -111,7 +116,7 @@ function Index() {
     (state) => state.products
   );
   useEffect(() => {
-    if (!location.pathname.includes('buy-now') && cartItems?.length) {
+    if (!location.pathname.includes('buy-now') && cartItems.length) {
       dispatch(getCartUpdateDetailsAsync({ cart: { cartItems } }));
       setErrors([]);
     }
@@ -160,7 +165,7 @@ function Index() {
       {!location.pathname.includes('buy-now') ? (
         <section>
           <div className='container checkoutWrapper'>
-            {!cartItems?.length ? (
+            {!cartItems.length ? (
               <NoItems />
             ) : (
               <Row>
