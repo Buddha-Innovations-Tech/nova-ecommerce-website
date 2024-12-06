@@ -60,8 +60,8 @@ const DeliveryTerms = () => {
           us immediately, and we will guide you through the process of returning
           the item and receiving a refund or exchange.
           <br /> <br /> Thank you for shopping with us at
-          Sunrisemultitradelink.com. If Thank you for shopping with us at
-          Sunrisemultitradelink.com. If you have any questions or concerns about
+          https://novaaitechnz.com/ If Thank you for shopping with us at
+          https://novaaitechnz.com/ If you have any questions or concerns about
           our shipping and delivery policy, please do not hesitate to contact
           us, and we will be happy to assist you.
         </p>

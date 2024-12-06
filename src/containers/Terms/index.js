@@ -33,9 +33,8 @@ const Terms = () => {
           consumers.
           <br /> <br />
           Parties: The parties to the agreement are the buyer, who is the
-          customer placing the order, and the seller, Sunrise Multitradelink,
-          with addresses at Beverveien 29 0596 OSLO, Norway and organization
-          number 826500212.
+          customer placing the order, and the seller, Novaaitech, with addresses
+          at Beverveien 29 0596 OSLO, Norway and organization number 826500212.
           <br /> <br />
           VAT is included in every price displayed in the online store. The
           buyer must pay the full amount, which includes all taxes and

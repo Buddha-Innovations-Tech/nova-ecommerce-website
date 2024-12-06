@@ -547,14 +547,14 @@ html {
 }
 
 div {
-  font-family: "Albert Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
   margin: 0;
   font-weight: 400;
   background: #f8f8f8;
-  font-family: "Albert Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1,
@@ -565,7 +565,7 @@ h2,
   margin-bottom: 0.1rem;
   color: #1d2a35;
   line-height: 150%;
-  font-family: "Albert Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1 {
@@ -1153,7 +1153,7 @@ thead {
   font-size: 14px;
   font-weight: 400;
   padding-top: 0.7rem;
-  color: red;
+  color: #1d2a35;
 }
 .navbarBox .menu--items .sub--menu .subcatWrapper--itemholder__items:hover {
   color: #276EB6;
@@ -2401,19 +2401,16 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
 }
 .shopByCatrgoryWrapper .productCarousel .categoryProduct img {
   width: 100%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  overflow: hidden;
+  height: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.shopByCatrgoryWrapper .productCarousel .categoryProduct p {
-  margin-top: 1rem;
+.shopByCatrgoryWrapper .productCarousel .categoryProduct div {
+  margin-top: 1.5rem;
   color: #1d2a35;
   font-weight: 500 !important;
-  text-decoration: underline;
-  letter-spacing: 0.5px;
-  height: 2.3rem;
-  overflow: hidden;
-  font-size: 15px !important;
+  font-size: 18px;
+  text-align: center;
   display: block;
   display: -webkit-box;
   -webkit-line-clamp: 4;
