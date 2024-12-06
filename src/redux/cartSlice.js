@@ -11,7 +11,7 @@ export const getCartUpdateDetailsAsync = createAsyncThunk(
     let currencyCode = JSON.parse(localStorage.getItem("currencyValue"))[
       "currencyCode"
     ];
-    console.log(cart["cartItems"]);
+
     try {
       const response = await axios.post("/api/orders/cart", {
         cartItems: cart["cartItems"],
@@ -121,6 +121,7 @@ export const addOrderAsync = createAsyncThunk(
         {
           subscriberId: user._id,
           orderItems: order.cart.cartItems,
+          checkoutId: order.checkoutId,
           paymentType: "CASH",
           shippingDetails,
           billingDetails,

@@ -198,18 +198,18 @@ const Shipping = () => {
       resetShippingForm();
     }
   }, [useDetailsInput]);
-  useEffect(() => {
-    if (cart?.isOrderPlaceSuccess) {
-      setShow(true);
-      dispatch(removeCart());
-    }
-  }, [cart?.isOrderPlaceSuccess]);
-  useEffect(() => {
-    if (cart?.quickBuySuccess) {
-      setShow(true);
-      dispatch(resetQuickBuy());
-    }
-  }, [cart?.quickBuySuccess]);
+  // useEffect(() => {
+  //   if (cart?.isOrderPlaceSuccess) {
+  //     setShow(true);
+  //     dispatch(removeCart());
+  //   }
+  // }, [cart?.isOrderPlaceSuccess]);
+  // useEffect(() => {
+  //   if (cart?.quickBuySuccess) {
+  //     setShow(true);
+  //     dispatch(resetQuickBuy());
+  //   }
+  // }, [cart?.quickBuySuccess]);
 
   // useEffect(() => {
   //   console.log(shippingDetails);

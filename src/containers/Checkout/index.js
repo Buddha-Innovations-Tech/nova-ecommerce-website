@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Modal, Row } from "react-bootstrap";
 import Bill from "../../components/Bill/index";
-import paymentAcceptance from "../../assets/images/netsLogoColored.svg";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -13,10 +13,9 @@ import {
   removeCart,
   resetQuickBuy,
 } from "../../redux/cartSlice";
-import axios from "axios";
-import Choosepayment from "../../components/Choosepayment";
+
 // import Message from '../../components/Message/Message';
-import { BsCash } from "react-icons/bs";
+import PaymentComponent from "./paymentComponent";
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -34,6 +33,8 @@ const Checkout = () => {
     buyNowTotal,
     buyNowCartItems,
     buyNowGrandTotal,
+    grandTotal,
+    discount,
     total,
     cartItems,
     ...cart
@@ -152,22 +153,8 @@ const Checkout = () => {
 
             <Col>
               <Bill page="checkout" shippingPrice={shippingPrice} />
-              <section className="checkoutFinal">
-                <div className="checkoutFinal-method">
-                  <b>Payment Method: </b> &nbsp;
-                  <span>
-                    <BsCash /> Cash ON delivery
-                  </span>
-                </div>
-                <button
-                  className="bton bton--lg bton--primary"
-                  onClick={() => {
-                    handleSubmit();
-                  }}
-                >
-                  Confirm Order
-                </button>
-              </section>
+
+              <PaymentComponent grandTotal={grandTotal} />
             </Col>
           </Row>
         </Container>

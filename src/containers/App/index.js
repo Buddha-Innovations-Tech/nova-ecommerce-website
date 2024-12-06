@@ -45,13 +45,15 @@ import AboutUs from "../AboutUs";
 import DeliveryTerms from "../DeliveryTerms";
 import Orders from "../Orders";
 import Reviews from "../reviews";
+import PaymentResult from "../Checkout/paymentResult";
+import PaymentSuccess from "../Checkout/paymentSuccess";
 
 const App = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // axios.defaults.baseURL = "http://localhost:8010";
-  axios.defaults.baseURL = "https://backend.novaaitechnz.com";
+  axios.defaults.baseURL = "http://localhost:5000";
+  // axios.defaults.baseURL = "https://backend.novaaitechnz.com";
   // axios.defaults.baseURL = 'http://192.168.5.23:8008';
 
   useEffect(() => {
@@ -118,6 +120,8 @@ const App = () => {
             <Route path="/account" element={<Account />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/reviews" element={<Reviews />} />
+            <Route path="/payment-result" element={<PaymentResult />} />
+            <Route path="/payment-success" element={<PaymentSuccess />} />
             {/* <Route path='/cleaning' element={<CleaningFacility />} /> */}
             <Route path="/about" element={<AboutUs />} />
             <Route
