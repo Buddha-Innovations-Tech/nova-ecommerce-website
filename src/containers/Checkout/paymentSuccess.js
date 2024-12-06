@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const PaymentSuccess = () => {
   return (
@@ -28,6 +29,10 @@ const PaymentSuccess = () => {
           <p className='orderSuccessEmailNotice'>
             A confirmation email has been sent to your registered email address.
           </p>
+
+          <Link to='/'>
+            <button className='bton bton--primary'></button>
+          </Link>
         </div>
       </div>
     </Container>
