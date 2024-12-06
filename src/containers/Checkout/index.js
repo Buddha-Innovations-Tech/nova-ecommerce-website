@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Col, Container, Modal, Row } from "react-bootstrap";
-import Bill from "../../components/Bill/index";
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Modal, Row } from 'react-bootstrap';
+import Bill from '../../components/Bill/index';
 
-import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import {
   addOrderAsync,
@@ -12,10 +12,10 @@ import {
   getCartUpdateDetailsAsync,
   removeCart,
   resetQuickBuy,
-} from "../../redux/cartSlice";
+} from '../../redux/cartSlice';
 
 // import Message from '../../components/Message/Message';
-import PaymentComponent from "./paymentComponent";
+import PaymentComponent from './paymentComponent';
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const Checkout = () => {
 
   const shippingPrice = location.state.shippingPrice;
   const storePickup = location.state.storePickup;
-  const details = JSON.parse(localStorage.getItem("details"));
+  const details = JSON.parse(localStorage.getItem('details'));
 
   const { user } = useSelector((state) => state.subscribers);
   const {
@@ -43,19 +43,23 @@ const Checkout = () => {
   const [show, setShow] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleClose = () => {
     setShow(false);
-    navigate("/");
+    navigate('/');
   };
 
   useEffect(() => {
     if (!storePickup) {
       !details &&
-        location.pathname.includes("buy-now") &&
-        navigate("/shipping/buy-now");
+        location.pathname.includes('buy-now') &&
+        navigate('/shipping/buy-now');
       !details &&
-        !location.pathname.includes("buy-now") &&
-        navigate("/shipping");
+        !location.pathname.includes('buy-now') &&
+        navigate('/shipping');
     }
   }, [details, storePickup]);
 
@@ -86,7 +90,7 @@ const Checkout = () => {
 
   useEffect(() => {
     if (!user) {
-      navigate("/login");
+      navigate('/login');
       return;
     }
   }, [success, dispatch]);
@@ -99,7 +103,7 @@ const Checkout = () => {
             billingDetails: bDetails,
             shippingDetails: sDetails,
           },
-          cart: !location.pathname.includes("buy-now")
+          cart: !location.pathname.includes('buy-now')
             ? { cartItems, quickBuy: false }
             : {
                 cartItems: buyNowCartItems,
@@ -114,13 +118,13 @@ const Checkout = () => {
   };
 
   useEffect(() => {
-    if (!location.pathname.includes("buy-now") && cartItems.length) {
+    if (!location.pathname.includes('buy-now') && cartItems.length) {
       dispatch(getCartUpdateDetailsAsync({ cart: { cartItems } }));
     }
   }, []);
 
   useEffect(() => {
-    if (location.pathname.includes("buy-now") && buyNowCartItems?.length) {
+    if (location.pathname.includes('buy-now') && buyNowCartItems?.length) {
       dispatch(
         getBuyNowCartUpdateDetailsAsync({
           buyNowCart: { buyNowCartItems },
@@ -131,7 +135,7 @@ const Checkout = () => {
 
   return (
     <>
-      <section className="shippingWrapper">
+      <section className='shippingWrapper'>
         <Container>
           <Row>
             {/* <Col md={7}>
@@ -152,7 +156,7 @@ const Checkout = () => {
             </Col> */}
 
             <Col>
-              <Bill page="checkout" shippingPrice={shippingPrice} />
+              <Bill page='checkout' shippingPrice={shippingPrice} />
 
               <PaymentComponent grandTotal={grandTotal} />
             </Col>
@@ -162,11 +166,11 @@ const Checkout = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
-          <section className="text-center">
+          <section className='text-center'>
             <div>
               <i
-                className="fa  fa-angellist mb-3 "
-                style={{ color: "green", fontSize: "3.5rem" }}
+                className='fa  fa-angellist mb-3 '
+                style={{ color: 'green', fontSize: '3.5rem' }}
               ></i>
             </div>
             <strong>Your Order Has been Placed Sucessfully!!!</strong>
@@ -174,7 +178,7 @@ const Checkout = () => {
         </Modal.Body>
         <Modal.Footer>
           <button
-            className="bton bton--full bton--primary"
+            className='bton bton--full bton--primary'
             onClick={handleClose}
           >
             Okay

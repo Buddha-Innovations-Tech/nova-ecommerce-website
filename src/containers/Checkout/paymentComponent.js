@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { BsCash } from "react-icons/bs";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { BsCash } from 'react-icons/bs';
 
 const PaymentComponent = ({ grandTotal }) => {
   const [res, setRes] = useState(null);
@@ -16,27 +16,27 @@ const PaymentComponent = ({ grandTotal }) => {
     try {
       if (!proceedPayment) {
         setProceedPayment(true);
-        const response = await axios.post("/api/payment", {
+        const response = await axios.post('/api/payment', {
           amount: grandTotal * 100,
         });
         const data = response.data;
         setRes(data);
       }
     } catch (error) {
-      console.error("Error during checkout:", error);
+      console.error('Error during checkout:', error);
       setProceedPayment(false);
     }
   };
 
   return (
-    <section className="checkoutFinal">
+    <section className='checkoutFinal mt-3'>
       <button
-        className="bton bton--lg bton--primary"
+        className='bton bton--lg bton--primary'
         onClick={() => {
           submitForm();
         }}
       >
-        {proceedPayment ? "Proceeding to Payment" : "Confirm Order"}
+        {proceedPayment ? 'Proceeding to Payment' : 'Proceed to Payment'}
       </button>
     </section>
   );

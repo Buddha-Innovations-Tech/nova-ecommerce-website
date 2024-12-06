@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
-import { Col, Form, Row, Spinner } from "react-bootstrap";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
-import Bill from "../../components/Bill/index";
+import React, { Fragment } from 'react';
+import { Col, Form, Row, Spinner } from 'react-bootstrap';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
+import Bill from '../../components/Bill/index';
 import {
   addToCartFromCartPage,
   deleteCartItem,
@@ -20,17 +20,22 @@ import {
   resetQuickBuy,
   addToCart,
   removeFromBuyNowCart,
-} from "../../redux/cartSlice";
-import NoItems from "../../components/NoItems";
-import { MdOutlineDelete } from "react-icons/md";
+} from '../../redux/cartSlice';
+import NoItems from '../../components/NoItems';
+import { MdOutlineDelete } from 'react-icons/md';
 
 const QuantityBox = ({ number, item }) => {
   const location = useLocation();
   const dispatch = useDispatch();
   const [previousValue, setPreviousValue] = useState(number);
   const [qty, setQty] = useState(number);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const onChange = (e) => {
-    if (!location.pathname.includes("buy-now")) {
+    if (!location.pathname.includes('buy-now')) {
       if (Number(e.target.value) > previousValue) {
         if (Number(qty) < 1) {
           setQty(Number(e.target.value));
@@ -76,8 +81,8 @@ const QuantityBox = ({ number, item }) => {
     }
   };
   return (
-    <Form.Group className="itemInfo-info-quantity ">
-      <Form.Control type="number" onChange={onChange} value={qty} />
+    <Form.Group className='itemInfo-info-quantity '>
+      <Form.Control type='number' onChange={onChange} value={qty} />
     </Form.Group>
   );
 };
@@ -111,13 +116,13 @@ function Index() {
     (state) => state.products
   );
   useEffect(() => {
-    if (!location.pathname.includes("buy-now") && cartItems.length) {
+    if (!location.pathname.includes('buy-now') && cartItems.length) {
       dispatch(getCartUpdateDetailsAsync({ cart: { cartItems } }));
       setErrors([]);
     }
   }, [total]);
   useEffect(() => {
-    if (location.pathname.includes("buy-now") && buyNowCartItems?.length) {
+    if (location.pathname.includes('buy-now') && buyNowCartItems?.length) {
       dispatch(
         getBuyNowCartUpdateDetailsAsync({
           buyNowCart: { buyNowCartItems },
@@ -157,34 +162,34 @@ function Index() {
 
   return (
     <Fragment>
-      {!location.pathname.includes("buy-now") ? (
+      {!location.pathname.includes('buy-now') ? (
         <section>
-          <div className="container checkoutWrapper">
+          <div className='container checkoutWrapper'>
             {!cartItems.length ? (
               <NoItems />
             ) : (
               <Row>
                 <Col lg={8} md={12}>
-                  <section className="cartItem">
-                    <section className="flex-between">
+                  <section className='cartItem'>
+                    <section className='flex-between'>
                       <div>
-                        <h3 className="">Your Cart</h3>{" "}
+                        <h3 className=''>Your Cart</h3>{' '}
                         <small>{cartItems?.length} items in your cart</small>
                       </div>
                       <button
-                        className="bton bton--nacked bton--sm"
+                        className='bton bton--nacked bton--sm'
                         onClick={() => dispatch(removeCart())}
                       >
                         clear cart
                       </button>
                     </section>
-                    <section className="cartItem-title pb-2">
-                      <div className="container p-0">
-                        <div className="row mt-3">
-                          <div className="col-6">PRODUCTS</div>
-                          <div className="col-2">QUANTITY</div>
-                          <div className="col-2">UNIT COST</div>
-                          <div className="col-2">SUB-TOTAL</div>
+                    <section className='cartItem-title pb-2'>
+                      <div className='container p-0'>
+                        <div className='row mt-3'>
+                          <div className='col-6'>PRODUCTS</div>
+                          <div className='col-2'>QUANTITY</div>
+                          <div className='col-2'>UNIT COST</div>
+                          <div className='col-2'>SUB-TOTAL</div>
                         </div>
                       </div>
                     </section>
@@ -192,33 +197,33 @@ function Index() {
                     {cartAddLoading ? (
                       <>
                         {cartItems?.map((item) => (
-                          <section key={item._id} className="cartItem-items ">
-                            <div className="container p-0">
-                              <div className="row mt-3">
-                                <div className="col-md-6 col-sm-12">
-                                  <section className="itemInfo">
-                                    <figure className="itemInfo-image">
+                          <section key={item._id} className='cartItem-items '>
+                            <div className='container p-0'>
+                              <div className='row mt-3'>
+                                <div className='col-md-6 col-sm-12'>
+                                  <section className='itemInfo'>
+                                    <figure className='itemInfo-image'>
                                       <img
                                         src={`${process.env.REACT_APP_IMAGE_PREFIX}${item.product.heroImage}`}
                                         alt={item.product.name}
                                       />
                                     </figure>
-                                    <section className="itemInfo-info">
+                                    <section className='itemInfo-info'>
                                       <Link
                                         to={`/product/${item.product.slug}`}
                                       >
-                                        <h2 className="itemInfo-info-title">
+                                        <h2 className='itemInfo-info-title'>
                                           {item.product.name}
                                         </h2>
                                       </Link>
-                                      <div className="itemInfo-info-brand ">
+                                      <div className='itemInfo-info-brand '>
                                         {item.product.variants
                                           ? variantInfo(item.product.variants)
                                           : null}
                                       </div>
 
                                       <div
-                                        className="itemInfo-info-remove mt-2"
+                                        className='itemInfo-info-remove mt-2'
                                         onClick={() =>
                                           dispatch(
                                             deleteCartItem(
@@ -242,7 +247,7 @@ function Index() {
                                   </section>
                                 </div>
 
-                                <div className="col-md-2 col-4">
+                                <div className='col-md-2 col-4'>
                                   {/* <Counter />
                                   <QuantityBox
                                     id={item.product._id}
@@ -251,9 +256,9 @@ function Index() {
                                     loading={cartAddLoading}
                                   /> */}
 
-                                  <div className="counterHolder">
+                                  <div className='counterHolder'>
                                     <div
-                                      className="counterHolder-item"
+                                      className='counterHolder-item'
                                       onClick={() => {
                                         dispatch(
                                           removeFromCart(item.product._id)
@@ -263,11 +268,11 @@ function Index() {
                                       -
                                     </div>
 
-                                    <div className="counterHolder-item Qtynumber">
+                                    <div className='counterHolder-item Qtynumber'>
                                       {item.qty}
                                     </div>
                                     <div
-                                      className="counterHolder-item"
+                                      className='counterHolder-item'
                                       onClick={() => {
                                         dispatch(
                                           addToCart({
@@ -281,24 +286,24 @@ function Index() {
                                     </div>
                                   </div>
                                 </div>
-                                <div className="col-md-2 col-4">
-                                  <div className="cartItem-items-unit ">
-                                    {currencyCode}{" "}
+                                <div className='col-md-2 col-4'>
+                                  <div className='cartItem-items-unit '>
+                                    {currencyCode}{' '}
                                     {Number(
                                       Number(item.product.price) *
                                         Number(currencyValue)
                                     ).toFixed(2)}
-                                  </div>{" "}
+                                  </div>{' '}
                                 </div>
-                                <div className="col-md-2 col-4">
-                                  <div className="cartItem-items-sub">
-                                    {currencyCode}{" "}
+                                <div className='col-md-2 col-4'>
+                                  <div className='cartItem-items-sub'>
+                                    {currencyCode}{' '}
                                     {Number(
                                       item.product.price *
                                         item.qty *
                                         Number(currencyValue)
-                                    ).toFixed(2)}{" "}
-                                  </div>{" "}
+                                    ).toFixed(2)}{' '}
+                                  </div>{' '}
                                 </div>
                               </div>
                             </div>
@@ -306,9 +311,9 @@ function Index() {
                         ))}
                       </>
                     ) : (
-                      <div className="overlayLoader">
-                        <span className="overlayLoader-item">
-                          <Spinner animation="border" variant="light" />{" "}
+                      <div className='overlayLoader'>
+                        <span className='overlayLoader-item'>
+                          <Spinner animation='border' variant='light' />{' '}
                           <span>Loading</span>
                         </span>
                       </div>
@@ -316,8 +321,8 @@ function Index() {
 
                     {/* .............////// */}
                   </section>
-                  {!location.pathname.includes("buy-now") && cartError && (
-                    <p className="loginError">{cartMessage}</p>
+                  {!location.pathname.includes('buy-now') && cartError && (
+                    <p className='loginError'>{cartMessage}</p>
                   )}
                 </Col>
                 <Col lg={4} md={12}>
@@ -326,10 +331,10 @@ function Index() {
               </Row>
             )}
 
-            <Link to="/">
-              <section className="continue mt-3">
-                {" "}
-                <i className="fa  fa-chevron-left"></i> continue shopping
+            <Link to='/'>
+              <section className='continue mt-3'>
+                {' '}
+                <i className='fa  fa-chevron-left'></i> continue shopping
               </section>
             </Link>
           </div>
@@ -337,57 +342,57 @@ function Index() {
       ) : (
         <section>
           {buyNowCartItems?.length > 0 ? (
-            <div className="container checkoutWrapper">
+            <div className='container checkoutWrapper'>
               <Row>
                 <Col lg={8} md={12}>
-                  <section className="cartItem">
-                    <section className="flex-between">
+                  <section className='cartItem'>
+                    <section className='flex-between'>
                       <div>
-                        <h2 className="">Buy now Cart</h2>{" "}
+                        <h2 className=''>Buy now Cart</h2>{' '}
                       </div>
-                      <button className="bton bton--nacked bton--sm">
+                      <button className='bton bton--nacked bton--sm'>
                         clear cart
                       </button>
                     </section>
-                    <section className="cartItem-title pb-2">
-                      <div className="container p-0">
-                        <div className="row mt-3">
-                          <div className="col-6">PRODUCT</div>
-                          <div className="col-2">QUANTITY</div>
-                          <div className="col-2">UNIT COST</div>
-                          <div className="col-2">SUB-TOTAL</div>
+                    <section className='cartItem-title pb-2'>
+                      <div className='container p-0'>
+                        <div className='row mt-3'>
+                          <div className='col-6'>PRODUCT</div>
+                          <div className='col-2'>QUANTITY</div>
+                          <div className='col-2'>UNIT COST</div>
+                          <div className='col-2'>SUB-TOTAL</div>
                         </div>
                       </div>
                     </section>
                     {/* .................  */}
                     {getBuyNowCartLoading ? (
-                      <div className="overlayLoader">
-                        <span className="overlayLoader-item">
-                          <Spinner animation="border" variant="light" />{" "}
+                      <div className='overlayLoader'>
+                        <span className='overlayLoader-item'>
+                          <Spinner animation='border' variant='light' />{' '}
                           <span>Loading</span>
                         </span>
                       </div>
                     ) : (
-                      <section className="cartItem-items ">
-                        <div className="container p-0">
-                          <div className="row mt-3">
-                            <div className="col-6">
-                              <section className="itemInfo">
-                                <figure className="itemInfo-image">
+                      <section className='cartItem-items '>
+                        <div className='container p-0'>
+                          <div className='row mt-3'>
+                            <div className='col-6'>
+                              <section className='itemInfo'>
+                                <figure className='itemInfo-image'>
                                   <img
                                     src={`${process.env.REACT_APP_IMAGE_PREFIX}${buyNowCartItems[0]?.product.heroImage}`}
-                                    alt=""
+                                    alt=''
                                   />
                                 </figure>
-                                <section className="itemInfo-info">
+                                <section className='itemInfo-info'>
                                   <Link
                                     to={`/product/${buyNowCartItems[0]?.product.slug}`}
                                   >
-                                    <h2 className="itemInfo-info-title">
+                                    <h2 className='itemInfo-info-title'>
                                       {buyNowCartItems[0]?.product.name}
                                     </h2>
                                   </Link>
-                                  <div className="itemInfo-info-brand ">
+                                  <div className='itemInfo-info-brand '>
                                     {buyNowCartItems[0]?.product.variants
                                       ? variantInfo(
                                           buyNowCartItems[0]?.product.variants
@@ -396,7 +401,7 @@ function Index() {
                                   </div>
 
                                   <div
-                                    className="itemInfo-info-remove mt-2"
+                                    className='itemInfo-info-remove mt-2'
                                     onClick={() => {
                                       dispatch(resetQuickBuy());
                                     }}
@@ -415,7 +420,7 @@ function Index() {
                                 item={buyNowCartItems[0]}
                               />
                             </div> */}
-                            <div className="col-md-2 col-4">
+                            <div className='col-md-2 col-4'>
                               {/* <Counter />
                                   <QuantityBox
                                     id={item.product._id}
@@ -423,10 +428,10 @@ function Index() {
                                     item={item}
                                     loading={cartAddLoading}
                                   /> */}
-                              <div className="counterHolder">
+                              <div className='counterHolder'>
                                 {buyNowCartItems[0].qty > 1 && (
                                   <div
-                                    className="counterHolder-item"
+                                    className='counterHolder-item'
                                     onClick={() => {
                                       dispatch(
                                         removeFromBuyNowCart(
@@ -438,11 +443,11 @@ function Index() {
                                     -
                                   </div>
                                 )}
-                                <div className="counterHolder-item Qtynumber">
+                                <div className='counterHolder-item Qtynumber'>
                                   {buyNowCartItems[0].qty}
                                 </div>
                                 <div
-                                  className="counterHolder-item"
+                                  className='counterHolder-item'
                                   onClick={() => {
                                     dispatch(addToQuickBuyLoading());
                                     // if (
@@ -463,29 +468,29 @@ function Index() {
                                 </div>
                               </div>
                             </div>
-                            <div className="col-2">
-                              <div className="cartItem-items-unit ">
-                                {currencyCode}{" "}
+                            <div className='col-2'>
+                              <div className='cartItem-items-unit '>
+                                {currencyCode}{' '}
                                 {buyNowCartItems[0]?.product.price *
                                   Number(currencyValue)}
-                              </div>{" "}
+                              </div>{' '}
                             </div>
-                            <div className="col-2">
-                              <div className="cartItem-items-sub">
-                                {currencyCode}{" "}
+                            <div className='col-2'>
+                              <div className='cartItem-items-sub'>
+                                {currencyCode}{' '}
                                 {buyNowCartItems[0]?.product.price *
                                   buyNowCartItems[0]?.qty *
-                                  Number(currencyValue)}{" "}
-                              </div>{" "}
+                                  Number(currencyValue)}{' '}
+                              </div>{' '}
                             </div>
                           </div>
                         </div>
                       </section>
                     )}
                     {/* .............////// */}
-                    {location.pathname.includes("buy-now") &&
+                    {location.pathname.includes('buy-now') &&
                       buyNowCartError && (
-                        <p className="loginError">{buyNowCartMessage}</p>
+                        <p className='loginError'>{buyNowCartMessage}</p>
                       )}
                   </section>
                 </Col>
@@ -494,20 +499,20 @@ function Index() {
                 </Col>
               </Row>
 
-              <section className="continue mt-3">
-                {" "}
-                <Link to="/">
-                  <i className="fa  fa-chevron-left"></i> Continue shopping
+              <section className='continue mt-3'>
+                {' '}
+                <Link to='/'>
+                  <i className='fa  fa-chevron-left'></i> Continue shopping
                 </Link>
               </section>
             </div>
           ) : (
             <div>
-              <section className="continue mt-3">
-                {" "}
+              <section className='continue mt-3'>
+                {' '}
                 <NoItems />
-                <Link to="/">
-                  <i className="fa  fa-chevron-left"></i> continue shopping
+                <Link to='/'>
+                  <i className='fa  fa-chevron-left'></i> continue shopping
                 </Link>
               </section>
             </div>
