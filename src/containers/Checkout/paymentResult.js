@@ -1,14 +1,13 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
-import { addOrderAsync, removeCart } from '../../redux/cartSlice';
-import { Alert, Modal, Spinner } from 'react-bootstrap';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
+import { addOrderAsync, removeCart } from "../../redux/cartSlice";
 
 const PaymentResult = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
-  const hostedCheckoutId = searchParams.get('hostedCheckoutId');
+  const hostedCheckoutId = searchParams.get("hostedCheckoutId");
   const [error, setError] = useState(null);
   const {
     shippingDetails: sDetails,
@@ -25,7 +24,7 @@ const PaymentResult = () => {
 
   const checkResultAndPlaceOrder = async () => {
     try {
-      let details = JSON.parse(window.localStorage.getItem('details'));
+      let details = JSON.parse(window.localStorage.getItem("details"));
 
       const response = await axios.get(
         `/api/payment/payment-result/${hostedCheckoutId}`
@@ -34,7 +33,7 @@ const PaymentResult = () => {
       if (
         response &&
         response.data.body.createdPaymentOutput.paymentStatusCategory ===
-          'SUCCESSFUL'
+          "SUCCESSFUL"
       ) {
         dispatch(
           addOrderAsync({
@@ -46,23 +45,29 @@ const PaymentResult = () => {
               cart: { cartItems, quickBuy: false },
               shippingPrice: 0.0,
               storePickup: false,
-              checkoutId: hostedCheckoutId,
+              merchantReference:
+                response.data.body.createdPaymentOutput.payment.paymentOutput
+                  .references.merchantReference,
             },
           })
         );
-        dispatch(removeCart());
-        window.localStorage.removeItem('details');
-        window.location.href = `${window.location.origin}/payment-success`;
       } else if (
         response &&
-        response.data.body.status === 'CANCELLED_BY_CONSUMER'
+        response.data.body.status === "CANCELLED_BY_CONSUMER"
       ) {
-        setError('Cancelled by consumer');
+        setError("Cancelled by consumer");
       }
     } catch (error) {
-      console.error('Error during checkout:', error);
+      console.error("Error during checkout:", error);
     }
   };
+
+  useEffect(() => {
+    if (cart?.isOrderPlaceSuccess) {
+      dispatch(removeCart());
+      window.location.href = `${window.location.origin}/payment-success`;
+    }
+  }, [cart?.isOrderPlaceSuccess]);
 
   useEffect(() => {
     if (hostedCheckoutId) {
@@ -72,21 +77,7 @@ const PaymentResult = () => {
 
   return (
     <>
-      {error && (
-        <Alert variant='danger'>
-          <h2>{error}</h2>
-        </Alert>
-      )}
-
-      <Modal show={true}>
-        <Modal.Body>
-          <section className='text-center'>
-            {' '}
-            <Spinner animation='grow' size='lg' />
-            <h1>Confirming Your Order ...</h1> <p>Plwase </p>
-          </section>
-        </Modal.Body>
-      </Modal>
+      <div>Payment Result: {error && <h2>{error}</h2>}</div>
     </>
   );
 };

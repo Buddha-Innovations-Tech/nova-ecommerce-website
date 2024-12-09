@@ -121,7 +121,7 @@ export const addOrderAsync = createAsyncThunk(
         {
           subscriberId: user._id,
           orderItems: order.cart.cartItems,
-          checkoutId: order.checkoutId,
+          merchantReference: order.merchantReference,
           paymentType: "CASH",
           shippingDetails,
           billingDetails,
@@ -315,6 +315,7 @@ const cartSlice = createSlice({
       state.shippingPrice = null;
       state.couponAppliedSuccess = null;
       localStorage.removeItem("cart");
+      localStorage.removeItem("details");
     },
     resetCart: (state) => {
       state.cartLoading = null;
