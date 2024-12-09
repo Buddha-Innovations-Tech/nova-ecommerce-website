@@ -3482,6 +3482,8 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   border-bottom: 1px solid #f2f4f8;
   padding: 0.5rem;
   margin-top: 2rem;
+  background: #f8f9fc;
+  border-radius: 6px;
 }
 .orderWrapper thead {
   background: white;

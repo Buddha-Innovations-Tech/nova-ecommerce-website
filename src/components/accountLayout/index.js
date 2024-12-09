@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { getSubscriberDetailsAsync, logout } from '../../redux/subscriberSlice';
 import { Col, Container, Row } from 'react-bootstrap';
+import { IoIosLogOut } from 'react-icons/io';
+import { IoLogOutOutline } from 'react-icons/io5';
 
 const AccountLayout = ({ children }) => {
   const dispatch = useDispatch();
@@ -57,9 +59,12 @@ const AccountLayout = ({ children }) => {
                   }
                 }}
               >
-                <span className='acc-lgout'>
-                  <i className='fa   fa-sliders me-3'></i> Log Out
-                </span>
+                <button className='bton bton--danger p-2 px-3'>
+                  <IoLogOutOutline
+                    style={{ fontSize: '1.5rem', marginRight: '.5rem' }}
+                  />{' '}
+                  Log Out
+                </button>
               </li>
             </ul>
           </Col>

@@ -10,6 +10,7 @@ const MyOrders = () => {
   const { currencyValue, currencyCode } = useSelector(
     (state) => state.products
   );
+  console.log(orders);
 
   const variantInfo = (variant) => {
     const variantKeys = Object.keys(variant);
@@ -52,7 +53,16 @@ const MyOrders = () => {
         {orders &&
           orders.map((order) => (
             <section className='orderWrapper'>
-              <section key={order._id} className='flex-between  p-2'>
+              <section
+                key={order._id}
+                className='flex-between flex-wrap gap-3  p-2'
+              >
+                <small>
+                  <strong>Order Id: </strong> {order._id}
+                </small>
+                <small>
+                  <strong>Merchant Ref: </strong> {order.merchantReference}
+                </small>
                 <small>{moment(order.createdAt).format('lll')}</small>
                 <small>
                   <strong>Status : </strong>{' '}
