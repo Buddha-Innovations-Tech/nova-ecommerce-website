@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategoriesAsync } from '../../redux/categorySlice';
+import ProductSkeletons from "../Skeletons/ProductsSkeletons";
 
 function ShopByCategory() {
   const dispatch = useDispatch();
@@ -58,7 +59,7 @@ function ShopByCategory() {
         <Container>
         <Row>
             {loading ? (
-              <div>Loading...</div> 
+              <ProductSkeletons/> 
             ) : (
               categories && categories.length > 0 && itemsToShow.map((cat) => (
                 <Col md={3} sm={6} key={cat.id}>

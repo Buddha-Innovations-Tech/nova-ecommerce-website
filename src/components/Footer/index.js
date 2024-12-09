@@ -13,6 +13,7 @@ import { FaInstagram } from 'react-icons/fa';
 import { AiOutlineYoutube } from 'react-icons/ai';
 import { PiTiktokLogo } from 'react-icons/pi';
 import { IoChevronForwardSharp } from "react-icons/io5";
+import payment from '../../assets/images/payment.jpg';
 
 
 const Footer = () => {
@@ -154,10 +155,13 @@ const Footer = () => {
                 <header className='socialMedia-title mt-4'>
                   <h4>We Accept</h4>
                 </header>
-                <ol>
-                  <li>Cash On Delivery</li>
-                  <li>Whattsapp orders</li>
-                </ol>
+                <div className='payment-accept' >
+                <img src={payment}/>
+                </div>
+                {/* <ol>
+                  <li> <img src={American}/> </li>
+                  <li> <img src={VisaMaster}/> </li>
+                </ol> */}
               </section>
             </Col>
           </Row>

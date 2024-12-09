@@ -6,7 +6,7 @@
     display: block;
   }
 }
-section[role='Footer'] {
+section[role="Footer"] {
   margin-top: 8rem;
   background: color(primary, base);
   @include responsive-for(md) {
@@ -15,9 +15,9 @@ section[role='Footer'] {
 
   .foooterInfo {
     margin-top: 3rem;
-      img {
-        width: 12rem;
-      }
+    img {
+      width: 12rem;
+    }
     p {
       color: white;
       line-height: 180%;
@@ -95,7 +95,14 @@ section[role='Footer'] {
         margin-top: 2rem;
       }
     }
-
+    .payment-accept {
+      width: 80%;
+      background-color: white;
+      padding: 0.5rem;
+      & img {
+        width: 100%;
+      }
+    }
     .footerImage {
       background: white;
       padding: 4px 8px;

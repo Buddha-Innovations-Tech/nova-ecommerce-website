@@ -1407,6 +1407,14 @@ section[role=Footer] .socialMedia-title {
     margin-top: 2rem;
   }
 }
+section[role=Footer] .socialMedia .payment-accept {
+  width: 80%;
+  background-color: white;
+  padding: 0.5rem;
+}
+section[role=Footer] .socialMedia .payment-accept img {
+  width: 100%;
+}
 section[role=Footer] .socialMedia .footerImage {
   background: white;
   padding: 4px 8px;
