@@ -78,7 +78,7 @@ const Footer = () => {
                       <div className='addHolder-key'>
                         <strong>Location</strong>{' '}
                       </div>
-                      <div className='addHolder-value '>Butwal Nepal</div>
+                      <div className='addHolder-value '>Unit 18, 22 Ashley Place, Papamoa Beach, New Zealand</div>
                     </div>
                   </li>
                   <li className='contact-box-item'>
@@ -89,7 +89,7 @@ const Footer = () => {
                       <div className='addHolder-key'>
                         <strong>Phone</strong>
                       </div>
-                      <div className='addHolder-value '>+977 985-7030826</div>
+                      <div className='addHolder-value '>+64 0204919304</div>
                     </div>
                   </li>
 
@@ -104,7 +104,7 @@ const Footer = () => {
                       <div className='addHolder-value '>
                         <a href='mailto:loraajpersonalcare@gmail.com'>
                           <span style={{ color: 'white' }}>
-                            technova@gmail.com
+                          novaaitech2024@gmail.com
                           </span>
                         </a>
                       </div>
