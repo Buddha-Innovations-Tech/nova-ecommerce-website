@@ -196,7 +196,7 @@ function Index() {
                           incl. of all tax
                         </div>
                       </section>
-
+{/* 
                       {product.options.length > 0 ? (
                         <div className="DetailsHolder-variants">
                           {product.options.map((entry) => (
@@ -231,7 +231,7 @@ function Index() {
                             </div>
                           ))}
                         </div>
-                      ) : null}
+                      ) : null} */}
                       {product.stock > 0 && (
                         <>
                           <div

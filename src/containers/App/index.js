@@ -52,8 +52,8 @@ const App = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // axios.defaults.baseURL = "http://localhost:8010";
-  axios.defaults.baseURL = 'https://backend.loraaj.com';
-  // axios.defaults.baseURL='https://backend.sunrisemultitradelink.com';
+  // axios.defaults.baseURL = 'https://backend.loraaj.com';
+  axios.defaults.baseURL='https://backend.sunrisemultitradelink.com';
   // axios.defaults.baseURL = 'http://192.168.5.23:8008';
 
   useEffect(() => {
