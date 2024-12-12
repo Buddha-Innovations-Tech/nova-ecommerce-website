@@ -2879,7 +2879,7 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   font-weight: 500;
   font-size: 16px;
 }
-.productWrapper .DetailsHolder-varient-buttons {
+.productWrapper .DetailsHolder-varient_items {
   margin-top: 1rem;
   list-style: none;
   padding: 0rem;
@@ -2887,12 +2887,12 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   flex-direction: row;
   gap: 1rem;
 }
-.productWrapper .DetailsHolder-varient-buttons button {
+.productWrapper .DetailsHolder-varient_items-name {
   border: 0.4px solid rgba(0, 0, 0, 0.4);
   padding: 0.5rem 0.75rem;
   background-color: transparent;
 }
-.productWrapper .DetailsHolder-varient-buttons button.active {
+.productWrapper .DetailsHolder-varient_items-name.active {
   background-color: black;
   color: white;
 }

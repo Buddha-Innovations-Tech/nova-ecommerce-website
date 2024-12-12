@@ -8,6 +8,7 @@ import Attractions from '../../components/Attractions';
 import Salebanner from '../../components/salebanner';
 import ShopByCategory from '../../components/ShopByCategory';
 
+
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);

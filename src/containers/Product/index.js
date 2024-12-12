@@ -244,7 +244,42 @@ function Index() {
                             {product.stock > 0 ? "IN STOCK" : "OUT OF STOCK"}
                           </div>
                           <section className="DetailsHolder-varient mt-3">
-                            <div className="DetailsHolder-qty-name">
+                          <div className="DetailsHolder-variants">
+                        {product.options
+                          ? product.options.map((entry) => (
+                              <div
+                                className="DetailsHolder-variants_item"
+                                key={entry.name}
+                              >
+                                <span className="DetailsHolder-variants_item-name">
+                                  {entry.name}
+                                </span>
+                                <div className="btons-list">
+                                  {entry.values.map((choice) => (
+                                    <button
+                                      key={choice}
+                                      type="button"
+                                      className={`btons-list_item ${
+                                        variants[entry.name] === choice
+                                          ? "active"
+                                          : ""
+                                      }`}
+                                      onClick={() =>
+                                        handleVariant({
+                                          type: entry.name,
+                                          choice: choice,
+                                        })
+                                      }
+                                    >
+                                      {choice}
+                                    </button>
+                                  ))}
+                                </div>
+                              </div>
+                            ))
+                          : null}
+                      </div>
+                            {/* <div className="DetailsHolder-qty-name">
                               Varient
                               <div className="DetailsHolder-varient-buttons mt-3">
                                 <button
@@ -274,7 +309,7 @@ function Index() {
                                   XL
                                 </button>
                               </div>
-                            </div>
+                            </div> */}
                           </section>
                           <section className="DetailsHolder-qty mt-3">
                             <div className="DetailsHolder-qty-name">
