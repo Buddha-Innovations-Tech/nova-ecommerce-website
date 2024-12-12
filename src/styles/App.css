@@ -2966,29 +2966,15 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
 .productTechInfo .productTechDesc td {
   border: 1px solid rgba(0, 0, 0, 0.3882352941) !important;
   color: #1d2a35 !important;
-}
-.productTechInfo .productTechDesc ul {
-  padding: 0;
-}
-.productTechInfo .productTechDesc ul .productTechDesc-box {
-  display: flex;
   font-size: 16px;
   color: #1d2a35;
 }
 @media all and (max-width: 576px) {
-  .productTechInfo .productTechDesc ul .productTechDesc-box {
+  .productTechInfo .productTechDesc td {
     font-size: 12px;
   }
 }
-.productTechInfo .productTechDesc ul .productTechDesc-box-key {
-  width: 30%;
-  font-weight: 700;
-}
-@media all and (max-width: 576px) {
-  .productTechInfo .productTechDesc ul .productTechDesc-box-key {
-    width: 45%;
-  }
-}
+
 .relatedHolder {
   background: #ffffff;
   box-shadow: 1px 2px 14px 6px rgba(143, 76, 59, 0.0549019608);

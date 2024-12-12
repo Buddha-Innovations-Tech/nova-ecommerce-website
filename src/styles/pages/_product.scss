@@ -224,10 +224,13 @@
   padding: 1rem;
   height: 100%;
   .productTechDesc {
-    // max-height: 60vh;
-    // overflow-y: auto;
-    // h2 {
-    // }
+//     ul{
+//       border: 1px solid black;
+//     }
+//     // max-height: 60vh;
+//     // overflow-y: auto;
+//     // h2 {
+//     // }
     
  .Table{
   border: 0.4px solid #00000063 !important;
@@ -241,27 +244,13 @@
    td{
     border: 1px solid  #00000063 !important;
     color: color(text-dark) !important;
-   } 
-    ul {
-      padding: 0;
-      .productTechDesc-box {
-        display: flex;
-        font-size: $text-md;
-        color: color(text-dark);
-        @include responsive-for(sm) {
-          font-size: 12px;
-        }
-        &-key {
-          width: 30%;
-          font-weight: $font-bold;
-          @include responsive-for(sm) {
-            width: 45%;
-          }
-        }
-        &-value {
-        }
-      }
+    font-size: $text-md;
+    color: color(text-dark);
+    @include responsive-for(sm) {
+      font-size: 12px;
     }
+   } 
+
   
   }
 }

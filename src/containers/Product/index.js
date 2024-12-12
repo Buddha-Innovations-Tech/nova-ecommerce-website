@@ -545,33 +545,22 @@ function Index() {
                 <Col lg={8}>
                   <div className=" productTechInfo">
                     <section className="productTechDesc ">
-                      {/* <ul className="mt-3">
+                      {/* <ul className="mt-3"> */}
+                      <Table  bordered className="Table"  >
+                      <tbody>
                         {product.information &&
                           product.information.map((info) => {
                             return (
-                              <li className="productTechDesc-box mt-2 ">
-                                <div className="productTechDesc-box-key ">
-                                  {info.informationKey}
-                                </div>{" "}
-                                <div className="productTechDesc-box ">
-                                  {info.informationValue}
-                                </div>
-                              </li>
-                            );
-                          })}
-                      </ul> */}
-                    <Table  bordered className="Table"  >
-                    <tbody>
+                              <>
         <tr >
-          <td>Color</td>
-          <td>White, Pink, Black</td>
+          <td> {info.informationKey}</td>
+          <td>{info.informationValue}</td>
         </tr>
-        <tr>
-          <td>Size</td>
-          <td>S, M, L, XL</td>
-        </tr>
-        </tbody>
-                      </Table>
+                              </>
+                             );
+                       })}
+                         </tbody>
+                         </Table>
                     </section>
                   </div>
                 </Col>
