@@ -2473,7 +2473,7 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   justify-content: space-between;
   align-items: center;
 }
-.productCard-price .priceValue, .productCard-price .productCard .cardOff, .productCard .productCard-price .cardOff {
+.productCard-price .priceValue {
   font-weight: 500;
   font-size: 16px;
   color: #276EB6;
@@ -2500,6 +2500,7 @@ section[role=Footer] .socialMedia .socialWrapper-icons img:hover {
   right: 1rem;
 }
 .productCard .cardOff {
+  font-weight: 500;
   padding-left: 1rem;
   font-size: 12px;
   color: #b3b3b3 !important;

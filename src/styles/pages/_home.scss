@@ -120,11 +120,12 @@
     // position: absolute;
     // top: 5%;
     // left: 5%;
-    @extend .priceValue;
+    font-weight: 500;
     padding-left: 1rem;
     font-size: 12px;
     color: color(gray, one) !important;
    text-decoration: line-through;
+  //  display: none;
   }
   &-Footer{
     display: flex;

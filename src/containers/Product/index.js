@@ -21,7 +21,7 @@ import {
 import Attractions from "../../components/Attractions";
 import ProductReview from "../../components/reviews";
 import { FaWhatsapp } from "react-icons/fa";
-import Table from 'react-bootstrap/Table';
+import Table from "react-bootstrap/Table";
 
 function Index() {
   const [isOpen, setIsOpen] = useState(false);
@@ -196,7 +196,7 @@ function Index() {
                           incl. of all tax
                         </div>
                       </section>
-{/* 
+                      {/* 
                       {product.options.length > 0 ? (
                         <div className="DetailsHolder-variants">
                           {product.options.map((entry) => (
@@ -244,41 +244,41 @@ function Index() {
                             {product.stock > 0 ? "IN STOCK" : "OUT OF STOCK"}
                           </div>
                           <section className="DetailsHolder-varient mt-3">
-                          <div className="DetailsHolder-variants">
-                        {product.options
-                          ? product.options.map((entry) => (
-                              <div
-                                className="DetailsHolder-variants_item"
-                                key={entry.name}
-                              >
-                                <span className="DetailsHolder-variants_item-name">
-                                  {entry.name}
-                                </span>
-                                <div className="btons-list">
-                                  {entry.values.map((choice) => (
-                                    <button
-                                      key={choice}
-                                      type="button"
-                                      className={`btons-list_item ${
-                                        variants[entry.name] === choice
-                                          ? "active"
-                                          : ""
-                                      }`}
-                                      onClick={() =>
-                                        handleVariant({
-                                          type: entry.name,
-                                          choice: choice,
-                                        })
-                                      }
+                            <div className="DetailsHolder-variants">
+                              {product.options
+                                ? product.options.map((entry) => (
+                                    <div
+                                      className="DetailsHolder-variants_item"
+                                      key={entry.name}
                                     >
-                                      {choice}
-                                    </button>
-                                  ))}
-                                </div>
-                              </div>
-                            ))
-                          : null}
-                      </div>
+                                      <span className="DetailsHolder-variants_item-name">
+                                        {entry.name}
+                                      </span>
+                                      <div className="btons-list">
+                                        {entry.values.map((choice) => (
+                                          <button
+                                            key={choice}
+                                            type="button"
+                                            className={`btons-list_item ${
+                                              variants[entry.name] === choice
+                                                ? "active"
+                                                : ""
+                                            }`}
+                                            onClick={() =>
+                                              handleVariant({
+                                                type: entry.name,
+                                                choice: choice,
+                                              })
+                                            }
+                                          >
+                                            {choice}
+                                          </button>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  ))
+                                : null}
+                            </div>
                             {/* <div className="DetailsHolder-qty-name">
                               Varient
                               <div className="DetailsHolder-varient-buttons mt-3">
@@ -443,7 +443,7 @@ function Index() {
                             {/* className="bton bton--md bton--sec ms-0 ms-md-2 mt-2 mt-md-0 prodbuttons */}
                             {/* </Link> */}
                             <button
-                            className="bton bton--md bton--primary prodbuttons"
+                              className="bton bton--md bton--primary prodbuttons"
                               onClick={() => {
                                 if (qty > 0) {
                                   dispatch(addToQuickBuyLoading());
@@ -546,21 +546,21 @@ function Index() {
                   <div className=" productTechInfo">
                     <section className="productTechDesc ">
                       {/* <ul className="mt-3"> */}
-                      <Table  bordered className="Table"  >
-                      <tbody>
-                        {product.information &&
-                          product.information.map((info) => {
-                            return (
-                              <>
-        <tr >
-          <td> {info.informationKey}</td>
-          <td>{info.informationValue}</td>
-        </tr>
-                              </>
-                             );
-                       })}
-                         </tbody>
-                         </Table>
+                      <Table bordered className="Table">
+                        <tbody>
+                          {product.information &&
+                            product.information.map((info) => {
+                              return (
+                                <>
+                                  <tr>
+                                    <td> {info.informationKey}</td>
+                                    <td>{info.informationValue}</td>
+                                  </tr>
+                                </>
+                              );
+                            })}
+                        </tbody>
+                      </Table>
                     </section>
                   </div>
                 </Col>
@@ -574,7 +574,7 @@ function Index() {
 
               <Row className="justify-content-center">
                 {product.related.map((rp) => (
-                  <ProductCard column="3" fProduct={rp} /> 
+                  <ProductCard column="3" fProduct={rp} />
                 ))}
               </Row>
             </>

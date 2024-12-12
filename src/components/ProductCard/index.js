@@ -43,8 +43,8 @@ function ProductCard({ column, fProduct }) {
                 </span>{' '}
                 
   {fProduct.discount > 0 && ( 
-                <span className='cardOff'> Rs &nbsp;{fProduct.discount}</span>
-               )}   
+                <span className='cardOff'> {fProduct.discount}%off</span>
+                )}    
               </div>
                 <span
                   className={`${fProduct.stock > 0 ? 'stockValue' : 'noStock'}`}
