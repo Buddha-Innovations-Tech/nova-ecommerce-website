@@ -229,7 +229,7 @@ const Shipping = () => {
     setBillingCityError(null);
     setStateError(null);
     setBillingStateError(null);
-    setApartmentError(null);
+    // setApartmentError(null);
     setCountryError(null);
     setBillingCountryError(null);
   };
@@ -294,10 +294,10 @@ const Shipping = () => {
         addressError === false &&
         billingAddressError !== null &&
         billingAddressError === false &&
-        apartmentError !== null &&
-        apartmentError === false &&
-        billingApartmentError !== null &&
-        billingApartmentError === false &&
+        // apartmentError !== null &&
+        // apartmentError === false &&
+        // billingApartmentError !== null &&
+        // billingApartmentError === false &&
         cityError !== null &&
         cityError === false &&
         billingCityError !== null &&
@@ -438,22 +438,22 @@ const Shipping = () => {
       setBillingAddressError((prev) => (prev = false));
     }
     // ADDRESS 2 Validation
-    if (
-      !shippingDetails["apartmentNumber"] ||
-      !shippingDetails["apartmentNumber"].trim() === ""
-    ) {
-      setApartmentError((prev) => (prev = true));
-    } else {
-      setApartmentError((prev) => (prev = false));
-    }
-    if (
-      (!sameBillingAddress && !billingDetails["apartmentNumber"]) ||
-      !billingDetails["apartmentNumber"]?.trim() === ""
-    ) {
-      setBillingApartmentError((prev) => (prev = true));
-    } else {
-      setBillingApartmentError((prev) => (prev = false));
-    }
+    // if (
+    //   !shippingDetails["apartmentNumber"] ||
+    //   !shippingDetails["apartmentNumber"].trim() === ""
+    // ) {
+    //   setApartmentError((prev) => (prev = true));
+    // } else {
+    //   setApartmentError((prev) => (prev = false));
+    // }
+    // if (
+    //   (!sameBillingAddress && !billingDetails["apartmentNumber"]) ||
+    //   !billingDetails["apartmentNumber"]?.trim() === ""
+    // ) {
+    //   setBillingApartmentError((prev) => (prev = true));
+    // } else {
+    //   setBillingApartmentError((prev) => (prev = false));
+    // }
     // City Validation
     if (!shippingDetails["city"] || !shippingDetails["city"].trim() === "") {
       setCityError((prev) => (prev = true));
@@ -653,11 +653,11 @@ const Shipping = () => {
                                 className={apartmentError && "reqError"}
                               />
                             </Form.Group>
-                            {apartmentError && (
+                            {/* {apartmentError && (
                               <small style={{ color: "red" }}>
                                 Invalid Apartment Number!
                               </small>
-                            )}
+                            )} */}
                           </Col>
 
                           <Col md={6}>
@@ -853,11 +853,11 @@ const Shipping = () => {
                                     }
                                   />
                                 </Form.Group>
-                                {billingApartmentError && (
+                                {/* {billingApartmentError && (
                                   <small style={{ color: "red" }}>
                                     Invalid Apartment!
                                   </small>
-                                )}
+                                )} */}
                               </Col>
                               <Col md={6}>
                                 <Form.Group
