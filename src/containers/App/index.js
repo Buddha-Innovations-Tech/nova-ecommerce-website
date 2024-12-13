@@ -53,8 +53,9 @@ const App = () => {
   const navigate = useNavigate();
   // axios.defaults.baseURL = "http://localhost:8010";
   // axios.defaults.baseURL = 'https://backend.loraaj.com';
-  axios.defaults.baseURL='https://backend.sunrisemultitradelink.com';
+  // axios.defaults.baseURL='https://backend.sunrisemultitradelink.com';
   // axios.defaults.baseURL = 'http://192.168.5.23:8008';
+    axios.defaults.baseURL = "https://backend.novaaitechnz.com";
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -71,7 +72,7 @@ const App = () => {
   );
   const getLoggedInUser = async () => {
     const { data } = await axios.get(
-      'https://backend.looraj.com/api/google-user',
+      'https://backend.novaaitechnz.com/api/google-user',
       {
         withCredentials: true,
       }
